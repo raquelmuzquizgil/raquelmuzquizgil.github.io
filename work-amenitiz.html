@@ -9,8 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=9">
-<script src="assets/js/vendor/chart.umd.js?v=9"></script>
+<link rel="stylesheet" href="assets/css/style.css?v=10">
+<script src="assets/js/vendor/chart.umd.js?v=10"></script>
 </head>
 <body>
 
@@ -95,19 +95,21 @@
 
     <div class="showcase-block fade-in d3" style="margin-top:56px;">
       <span class="showcase-label">Product tour</span>
-      <div class="tour-stepper" data-tour="bills">
-        <div class="tour-frame">
-          <img src="assets/img/amenitiz-tour-bills-1.webp" class="tour-img active" alt="Step 1: Bills is now in your sidebar">
-          <img src="assets/img/amenitiz-tour-bills-2.webp" class="tour-img" alt="Step 2: Collect a payment without a reservation">
-          <img src="assets/img/amenitiz-tour-bills-3.webp" class="tour-img" alt="Step 3: Find missing payments and invoices in one click">
+      <div class="product-tour-row">
+        <div class="tour-stepper" data-tour="bills">
+          <div class="tour-frame">
+            <img src="assets/img/amenitiz-tour-bills-1.webp" class="tour-img active" alt="Step 1: Bills is now in your sidebar">
+            <img src="assets/img/amenitiz-tour-bills-2.webp" class="tour-img" alt="Step 2: Collect a payment without a reservation">
+            <img src="assets/img/amenitiz-tour-bills-3.webp" class="tour-img" alt="Step 3: Find missing payments and invoices in one click">
+          </div>
+          <div class="tour-controls">
+            <button class="tour-back magnetic" disabled>Back</button>
+            <span class="tour-count"><span class="tour-current">1</span> / <span class="tour-total">3</span></span>
+            <button class="tour-next magnetic">Next</button>
+          </div>
         </div>
-        <div class="tour-controls">
-          <button class="tour-back magnetic" disabled>Back</button>
-          <span class="tour-count"><span class="tour-current">1</span> / <span class="tour-total">3</span></span>
-          <button class="tour-next magnetic">Next</button>
-        </div>
+        <p class="showcase-caption">An in-context tour pointing hoteliers straight to the new Bills tab, live on the dashboard they already use every day.</p>
       </div>
-      <p class="showcase-caption">An in-context tour pointing hoteliers straight to the new Bills tab, live on the dashboard they already use every day.</p>
     </div>
   </div>
 </section>
@@ -179,7 +181,7 @@
 
 <footer class="site-footer">&copy; Raquel Muzquiz Gil 2026</footer>
 
-<script src="assets/js/main.js?v=9"></script>
+<script src="assets/js/main.js?v=10"></script>
 <script>
 (function () {
   var canvas = document.getElementById('adoptionChart');
