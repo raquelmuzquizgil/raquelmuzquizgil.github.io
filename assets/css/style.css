@@ -80,46 +80,6 @@ h2.section-title{
   background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
 }
 
-/* ---------- custom cursor ---------- */
-.cursor-dot,.cursor-ring{
-  position:fixed;
-  top:0;left:0;
-  border-radius:50%;
-  pointer-events:none;
-  z-index:9999;
-  transform:translate(-50%,-50%);
-  will-change:transform;
-  opacity:0;
-  transition:opacity 0.3s;
-}
-.cursor-dot.is-active,.cursor-ring.is-active{opacity:1;}
-.cursor-dot{
-  width:6px;height:6px;
-  background:var(--accent);
-}
-.cursor-ring{
-  width:36px;height:36px;
-  border:1.5px solid var(--accent);
-  transition:width var(--dur-fast) var(--ease-out), height var(--dur-fast) var(--ease-out), opacity var(--dur-fast);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:0.6rem;
-  font-weight:700;
-  letter-spacing:0.08em;
-  text-transform:uppercase;
-  color:var(--accent);
-}
-.cursor-ring.cursor-big{
-  width:76px;height:76px;
-  background:var(--accent);
-  border-color:var(--accent);
-  color:var(--bg);
-}
-body.has-cursor,body.has-cursor a,body.has-cursor button{cursor:none;}
-@media (pointer:coarse){
-  .cursor-dot,.cursor-ring{display:none;}
-}
 
 /* ---------- site nav ---------- */
 .site-nav{
@@ -460,10 +420,12 @@ footer.site-footer{
 
 /* ---------- next project nav ---------- */
 .next-project{
-  background:var(--dark);
-  color:var(--bg);
+  background:var(--bg-light);
+  color:var(--text);
   padding:100px 0;
   text-align:center;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
 }
 .next-project .label{margin-bottom:24px;}
 .next-project .next-title{
@@ -644,6 +606,18 @@ footer.site-footer{
   grid-template-columns:repeat(2,1fr);
   gap:28px;
 }
+.other-work-teaser{
+  margin-top:28px;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:0.85rem;
+  color:var(--text-secondary);
+  transition:color 0.3s;
+}
+.other-work-teaser svg{transition:transform 0.3s var(--ease-out);}
+.other-work-teaser:hover{color:var(--accent);}
+.other-work-teaser:hover svg{transform:translateX(6px);}
 .work-tile{
   position:relative;
   grid-column:span 1;
@@ -871,5 +845,4 @@ footer.site-footer{
   *{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;}
   html{scroll-behavior:auto;}
   .badge-spin{animation:none;}
-  .cursor-dot,.cursor-ring{display:none;}
 }
