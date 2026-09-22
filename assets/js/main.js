@@ -215,4 +215,41 @@
     });
   })();
 
+  /* ---------------- email preview (hover-to-scroll + language switch) ---------------- */
+  (function initEmailPreview() {
+    document.querySelectorAll('.email-preview-window').forEach(function (win) {
+      var imgs = win.querySelectorAll('.email-preview-img');
+      var wrap = win.closest('.email-preview-wrap');
+      var dots = wrap ? wrap.querySelectorAll('.lang-dot') : [];
+
+      function activeImg() { return win.querySelector('.email-preview-img.active'); }
+
+      function setHover(hovering) {
+        var img = activeImg();
+        if (!img) return;
+        if (hovering) {
+          var shift = Math.max(0, img.scrollHeight - win.clientHeight);
+          img.style.transform = 'translateY(-' + shift + 'px)';
+        } else {
+          img.style.transform = 'translateY(0)';
+        }
+      }
+
+      win.addEventListener('mouseenter', function () { setHover(true); });
+      win.addEventListener('mouseleave', function () { setHover(false); });
+
+      dots.forEach(function (dot) {
+        dot.addEventListener('click', function () {
+          var lang = dot.getAttribute('data-lang');
+          dots.forEach(function (d) { d.classList.toggle('active', d === dot); });
+          imgs.forEach(function (img) {
+            var match = img.getAttribute('data-lang') === lang;
+            img.style.transform = 'translateY(0)';
+            img.classList.toggle('active', match);
+          });
+        });
+      });
+    });
+  })();
+
 })();
