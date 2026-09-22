@@ -192,4 +192,27 @@
     document.body.appendChild(grain);
   })();
 
+  /* ---------------- tour steppers ---------------- */
+  (function initTourSteppers() {
+    document.querySelectorAll('.tour-stepper').forEach(function (stepper) {
+      var imgs = stepper.querySelectorAll('.tour-img');
+      var back = stepper.querySelector('.tour-back');
+      var next = stepper.querySelector('.tour-next');
+      var current = stepper.querySelector('.tour-current');
+      var total = imgs.length;
+      var idx = 0;
+      stepper.querySelector('.tour-total').textContent = total;
+
+      function render() {
+        imgs.forEach(function (img, i) { img.classList.toggle('active', i === idx); });
+        current.textContent = idx + 1;
+        back.disabled = idx === 0;
+        next.disabled = idx === total - 1;
+      }
+      back.addEventListener('click', function () { if (idx > 0) { idx--; render(); } });
+      next.addEventListener('click', function () { if (idx < total - 1) { idx++; render(); } });
+      render();
+    });
+  })();
+
 })();

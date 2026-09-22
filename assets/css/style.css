@@ -690,6 +690,76 @@ footer.site-footer{
   gap:24px;
 }
 
+/* ---------- product showcase (amenitiz) ---------- */
+.showcase-grid{
+  margin-top:56px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:28px;
+  align-items:start;
+}
+.showcase-label{
+  display:block;
+  font-size:0.75rem;
+  font-weight:700;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:14px;
+}
+.showcase-caption{
+  margin-top:16px;
+  font-size:0.85rem;
+  color:var(--text-secondary);
+  max-width:52ch;
+}
+.email-frame{
+  max-width:280px;
+  border-radius:12px;
+  overflow:hidden;
+  border:1px solid var(--border);
+}
+.tour-frame{
+  position:relative;
+  background:var(--bg-light);
+  border:1.5px dashed var(--border);
+  border-radius:12px;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:320px;
+  padding:20px;
+}
+.tour-frame-wide{min-height:280px;}
+.tour-img{display:none;max-width:100%;max-height:420px;width:auto;height:auto;border-radius:6px;}
+.tour-img.active{display:block;}
+.tour-controls{
+  margin-top:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:20px;
+}
+.tour-controls button{
+  font-size:0.8rem;
+  font-weight:600;
+  padding:8px 18px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  transition:opacity 0.2s, border-color 0.2s, color 0.2s;
+}
+.tour-controls button:disabled{opacity:0.35;cursor:default;}
+.tour-controls button:not(:disabled):hover{border-color:var(--accent);color:var(--accent);}
+.tour-count{
+  font-size:0.78rem;
+  font-weight:600;
+  letter-spacing:0.04em;
+  color:var(--text-secondary);
+  min-width:44px;
+  text-align:center;
+}
+
 /* ---------- adoption chart ---------- */
 .adoption-head{max-width:640px;}
 .adoption-sub{
@@ -867,6 +937,8 @@ footer.site-footer{
   .lang-demo{grid-template-columns:1fr;text-align:center;}
   .lang-buttons{justify-content:center;}
   .lang-proof{grid-template-columns:1fr;}
+  .showcase-grid{grid-template-columns:1fr;}
+  .email-frame{max-width:240px;margin:0 auto;}
   .project-section{grid-template-columns:1fr;}
   .project-section:nth-child(even){direction:ltr;}
   .wrap{padding:0 22px;}
