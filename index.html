@@ -3,499 +3,117 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Raquel Muzquiz Gil — CRM &amp; Lifecycle Strategist</title>
-<meta name="description" content="Raquel Muzquiz Gil — Lifecycle marketer at the intersection of CRM and product. Barcelona.">
+<title>Raquel Muzquiz Gil · CRM &amp; Lifecycle Strategist</title>
+<meta name="description" content="Raquel Muzquiz Gil. Lifecycle marketer at the intersection of CRM and product. Barcelona.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
-
-<style>
-  :root{
-    --bg:#F5F3F0;
-    --bg-light:#EDEAE6;
-    --dark:#1A1714;
-    --accent:#DC0080;
-    --text:#1A1714;
-    --text-secondary:#5C5A57;
-    --border:#C0BDB8;
-  }
-
-  *{margin:0;padding:0;box-sizing:border-box;}
-
-  html{scroll-behavior:smooth;}
-
-  body{
-    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    line-height:1.5;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
-
-  img{max-width:100%;display:block;}
-
-  a{color:inherit;text-decoration:none;}
-
-  .wrap{
-    max-width:1200px;
-    margin:0 auto;
-    padding:0 32px;
-  }
-
-  section{
-    padding:120px 0;
-    position:relative;
-  }
-
-  .bg-off{background:var(--bg);}
-  .bg-light{background:var(--bg-light);}
-  .bg-dark{background:var(--dark);color:var(--bg);}
-
-  .label{
-    display:inline-block;
-    font-size:0.75rem;
-    font-weight:700;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    color:var(--accent);
-    margin-bottom:20px;
-  }
-
-  .fade-in{
-    opacity:0;
-    transform:translateY(36px);
-    transition:opacity 0.9s cubic-bezier(.16,.84,.44,1), transform 0.9s cubic-bezier(.16,.84,.44,1);
-  }
-  .fade-in.visible{
-    opacity:1;
-    transform:translateY(0);
-  }
-  .fade-in.d1{transition-delay:0.08s;}
-  .fade-in.d2{transition-delay:0.16s;}
-  .fade-in.d3{transition-delay:0.24s;}
-
-  /* ---------- HERO ---------- */
-  .hero{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    padding:160px 0 60px;
-  }
-
-  .hero-inner{
-    position:relative;
-    display:grid;
-    grid-template-columns:1.1fr 0.9fr;
-    align-items:center;
-    gap:40px;
-  }
-
-  .hero-text{position:relative;z-index:2;}
-
-  .hero-name{
-    font-size:clamp(3.4rem, 9vw, 7.5rem);
-    font-weight:800;
-    line-height:0.94;
-    letter-spacing:-0.03em;
-    text-transform:uppercase;
-  }
-
-  .hero-tagline{
-    max-width:440px;
-    margin-top:32px;
-    font-size:1.05rem;
-    color:var(--text-secondary);
-    font-weight:400;
-  }
-
-  .hero-photo-wrap{
-    position:relative;
-    z-index:1;
-    justify-self:end;
-    width:100%;
-    max-width:380px;
-    transform:translateY(-10px) rotate(1.2deg);
-  }
-
-  .photo-frame{
-    position:relative;
-    width:100%;
-    aspect-ratio:3/4;
-    background:
-      repeating-linear-gradient(135deg, rgba(220,0,128,0.07) 0 2px, transparent 2px 18px),
-      linear-gradient(155deg, #EDEAE6 0%, #E2DED8 100%);
-    border:1px dashed var(--border);
-    border-radius:6px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    overflow:hidden;
-  }
-
-  .photo-frame .monogram{
-    font-size:5.5rem;
-    font-weight:800;
-    color:var(--dark);
-    opacity:0.9;
-    letter-spacing:-0.02em;
-  }
-
-  .photo-frame .photo-tag{
-    position:absolute;
-    bottom:14px;
-    left:14px;
-    font-size:0.68rem;
-    font-weight:600;
-    letter-spacing:0.1em;
-    text-transform:uppercase;
-    color:var(--text-secondary);
-    background:var(--bg);
-    padding:4px 10px;
-    border-radius:20px;
-    border:1px solid var(--border);
-  }
-
-  .hero-contact{
-    margin-top:80px;
-    display:flex;
-    flex-wrap:wrap;
-    align-items:center;
-    gap:10px;
-    font-size:0.92rem;
-    font-weight:500;
-    border-top:1px solid var(--border);
-    padding-top:24px;
-  }
-  .hero-contact a:hover{color:var(--accent);}
-  .hero-contact .dot{color:var(--accent);}
-
-  .scroll-indicator{
-    margin-top:60px;
-    display:flex;
-    justify-content:center;
-  }
-  .scroll-indicator svg{
-    animation:bounce 1.8s infinite;
-  }
-  @keyframes bounce{
-    0%,100%{transform:translateY(0);opacity:0.5;}
-    50%{transform:translateY(10px);opacity:1;}
-  }
-
-  /* ---------- SECTION HEADS ---------- */
-  h2.section-title{
-    font-size:clamp(2.2rem, 5vw, 3.6rem);
-    font-weight:800;
-    letter-spacing:-0.02em;
-    line-height:1.02;
-  }
-
-  .section-sub{
-    max-width:560px;
-    margin-top:18px;
-    color:var(--text-secondary);
-    font-size:1rem;
-  }
-
-  /* ---------- WHAT I DO ---------- */
-  .capabilities{
-    margin-top:72px;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:48px;
-  }
-  .cap-block .label{margin-bottom:16px;}
-  .cap-title{
-    font-size:1.4rem;
-    font-weight:700;
-    line-height:1.2;
-    margin-bottom:14px;
-  }
-  .cap-desc{
-    color:var(--text-secondary);
-    font-size:0.95rem;
-  }
-
-  /* ---------- CASE STUDIES ---------- */
-  .case-head{max-width:720px;}
-  .case-company{
-    font-size:clamp(3rem, 9vw, 6.5rem);
-    font-weight:800;
-    letter-spacing:-0.03em;
-    line-height:0.98;
-    margin:10px 0 14px;
-  }
-  .case-subline{
-    color:var(--text-secondary);
-    font-size:0.95rem;
-    font-weight:500;
-    margin-bottom:32px;
-  }
-  .case-intro{
-    max-width:700px;
-    font-size:1.15rem;
-    font-weight:400;
-    line-height:1.5;
-  }
-
-  .stats-bar{
-    margin-top:64px;
-    background:var(--dark);
-    border-radius:10px;
-    padding:48px 40px;
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:32px;
-  }
-  .stat-number{
-    display:block;
-    font-size:clamp(1.8rem, 3.4vw, 2.6rem);
-    font-weight:800;
-    color:var(--accent);
-    letter-spacing:-0.02em;
-  }
-  .stat-label{
-    display:block;
-    margin-top:8px;
-    font-size:0.82rem;
-    color:#CFCBC5;
-  }
-
-  .placeholder-row{
-    margin-top:56px;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:24px;
-  }
-  .placeholder-box{
-    aspect-ratio:4/3;
-    background:var(--bg-light);
-    border:1.5px dashed var(--border);
-    border-radius:12px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:20px;
-  }
-  .placeholder-box span{
-    font-size:0.85rem;
-    font-weight:500;
-    color:var(--text-secondary);
-  }
-  .bg-off .placeholder-box, .bg-dark .placeholder-box{background:var(--bg-light);}
-
-  .placeholder-box.single{aspect-ratio:16/9;}
-
-  /* ---------- ADOPTION CHART ---------- */
-  .adoption-head{max-width:640px;}
-  .adoption-sub{
-    color:var(--accent);
-    font-weight:600;
-    font-size:1.05rem;
-    margin-top:14px;
-  }
-  .chart-card{
-    margin-top:56px;
-    background:#FFFFFF;
-    border-radius:14px;
-    padding:40px 32px 24px;
-  }
-  .chart-canvas-wrap{
-    position:relative;
-    height:380px;
-  }
-
-  .stat-cards{
-    margin-top:32px;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:24px;
-  }
-  .stat-card{
-    background:#FFFFFF;
-    border-radius:12px;
-    padding:32px 28px;
-  }
-  .stat-card .stat-number{color:var(--accent);font-size:2.1rem;}
-  .stat-card .stat-label{color:var(--text-secondary);margin-top:10px;font-size:0.88rem;}
-
-  .methodology{
-    margin-top:36px;
-    font-style:italic;
-    font-size:0.85rem;
-    color:var(--text-secondary);
-    max-width:680px;
-  }
-
-  /* ---------- CODE BLOCK ---------- */
-  .code-block{
-    margin-top:40px;
-    background:var(--dark);
-    border-radius:10px;
-    padding:28px 30px;
-    overflow-x:auto;
-  }
-  .code-block pre{
-    font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace;
-    font-size:0.85rem;
-    line-height:1.7;
-    color:#F0EEEA;
-    white-space:pre;
-  }
-  .code-block .kw{color:var(--accent);}
-  .code-caption{
-    margin-top:20px;
-    font-size:0.85rem;
-    color:var(--text-secondary);
-    max-width:640px;
-  }
-
-  /* ---------- OTHER WORK ---------- */
-  .projects{
-    margin-top:64px;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:40px;
-  }
-  .project-card .placeholder-box{margin-bottom:24px;}
-  .project-title{
-    font-size:1.5rem;
-    font-weight:700;
-    margin-bottom:12px;
-  }
-  .project-desc{
-    color:var(--text-secondary);
-    font-size:0.95rem;
-  }
-
-  /* ---------- CONTACT ---------- */
-  .contact-title{
-    font-size:clamp(2.2rem, 6vw, 4.2rem);
-    font-weight:800;
-    line-height:1.08;
-    letter-spacing:-0.02em;
-    max-width:820px;
-  }
-  .contact-details{
-    margin-top:40px;
-    font-size:1.05rem;
-    color:#E7E4DF;
-    display:flex;
-    flex-direction:column;
-    gap:6px;
-  }
-  .contact-details a:hover{color:var(--accent);}
-
-  .tags{
-    margin-top:48px;
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-  }
-  .tag{
-    border:1px solid var(--accent);
-    color:var(--accent);
-    border-radius:999px;
-    padding:8px 18px;
-    font-size:0.82rem;
-    font-weight:600;
-    transition:background 0.25s, color 0.25s;
-  }
-  .tag:hover{background:var(--accent);color:var(--dark);}
-
-  footer{
-    background:var(--dark);
-    color:#8A8781;
-    text-align:center;
-    padding:28px 0 40px;
-    font-size:0.8rem;
-  }
-
-  /* ---------- RESPONSIVE ---------- */
-  @media (max-width:900px){
-    section{padding:88px 0;}
-    .hero{padding:120px 0 40px;}
-    .hero-inner{
-      grid-template-columns:1fr;
-      gap:36px;
-    }
-    .hero-photo-wrap{
-      justify-self:center;
-      max-width:280px;
-      order:-1;
-    }
-    .capabilities{grid-template-columns:1fr;gap:40px;}
-    .stats-bar{grid-template-columns:repeat(2,1fr);}
-    .placeholder-row{grid-template-columns:1fr 1fr;}
-    .stat-cards{grid-template-columns:1fr;}
-    .projects{grid-template-columns:1fr;gap:48px;}
-    .wrap{padding:0 22px;}
-  }
-
-  @media (max-width:560px){
-    .hero-contact{flex-direction:column;align-items:flex-start;gap:4px;}
-    .hero-contact .dot{display:none;}
-    .placeholder-row{grid-template-columns:1fr;}
-    .stats-bar{grid-template-columns:1fr 1fr;padding:32px 24px;gap:24px;}
-    .chart-card{padding:28px 16px 16px;}
-    .code-block{padding:22px 18px;}
-  }
-</style>
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+
+<header class="site-nav">
+  <a href="index.html" class="nav-logo">Raquel Muzquiz Gil</a>
+  <button class="nav-toggle magnetic" aria-label="Open menu"><span></span><span></span><span></span></button>
+</header>
+
+<div class="nav-overlay">
+  <nav>
+    <a class="nav-link" href="index.html"><span class="nav-link-inner"><span>Home</span></span></a>
+    <a class="nav-link" href="index.html#work"><span class="nav-link-inner"><span>Work</span></span></a>
+    <a class="nav-link" href="work-amenitiz.html"><span class="nav-link-inner"><span>Amenitiz</span></span></a>
+    <a class="nav-link" href="work-miscota.html"><span class="nav-link-inner"><span>Miscota</span></span></a>
+    <a class="nav-link" href="work-other.html"><span class="nav-link-inner"><span>Other work</span></span></a>
+    <a class="nav-link" href="index.html#contact"><span class="nav-link-inner"><span>Contact</span></span></a>
+  </nav>
+  <div class="nav-overlay-footer">
+    <a href="mailto:raquelmuzquizgil@gmail.com">raquelmuzquizgil@gmail.com</a>
+    <span>Barcelona</span>
+  </div>
+</div>
+
+<main>
 
 <!-- ============ HERO ============ -->
 <section class="hero bg-off" id="hero">
   <div class="wrap hero-inner">
-    <div class="hero-text fade-in visible">
+    <div class="hero-text">
       <span class="label">CRM &amp; Lifecycle Strategist</span>
-      <h1 class="hero-name">Raquel<br>Muzquiz Gil</h1>
-      <p class="hero-tagline">Lifecycle marketer at the intersection of CRM and product. I build the infrastructure, segmentation and campaigns that turn product launches into measurable adoption — focused entirely on existing customers.</p>
+      <h1 class="hero-name">
+        <span class="line" data-split>Raquel</span>
+        <span class="line" data-split>Muzquiz Gil</span>
+      </h1>
+      <p class="hero-tagline fade-in d1">Lifecycle marketer at the intersection of CRM and product. I build the infrastructure, segmentation and campaigns that turn product launches into measurable adoption, focused entirely on existing customers.</p>
     </div>
-    <div class="hero-photo-wrap fade-in d2 visible">
-      <div class="photo-frame">
+    <div class="hero-photo-wrap fade-in d2">
+      <div class="hero-badge">
+        <a href="#contact" class="magnetic" data-cursor="Say hi">
+          <span class="badge-spin">
+            <svg viewBox="0 0 100 100">
+              <defs>
+                <path id="circlePath" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0" />
+              </defs>
+              <text font-size="7.4" font-weight="700" letter-spacing="1.6" fill="#1A1714">
+                <textPath href="#circlePath" startOffset="0%">AVAILABLE FOR WORK &#8226; LIFECYCLE &amp; CRM &#8226; </textPath>
+              </text>
+            </svg>
+          </span>
+        </a>
+      </div>
+      <div class="photo-frame tilt-card">
         <!-- Replace with: <img src="data:image/jpeg;base64,...." alt="Raquel Muzquiz Gil"> -->
         <span class="monogram">RM</span>
-        <span class="photo-tag">Photo — Raquel</span>
+        <span class="photo-tag">Photo &#8226; Raquel</span>
       </div>
     </div>
   </div>
   <div class="wrap">
-    <div class="hero-contact fade-in d3 visible">
+    <div class="hero-contact fade-in d3">
       <a href="mailto:raquelmuzquizgil@gmail.com">raquelmuzquizgil@gmail.com</a>
-      <span class="dot">·</span>
+      <span class="dot">&#8226;</span>
       <a href="https://linkedin.com/in/raquelmuzquiz" target="_blank" rel="noopener">linkedin.com/in/raquelmuzquiz</a>
-      <span class="dot">·</span>
+      <span class="dot">&#8226;</span>
       <span>Barcelona</span>
     </div>
-    <div class="scroll-indicator">
+    <a href="#what-i-do" class="scroll-indicator magnetic" data-cursor>
       <svg width="20" height="30" viewBox="0 0 20 30" fill="none">
         <line x1="10" y1="0" x2="10" y2="20" stroke="#1A1714" stroke-width="1.5"/>
         <path d="M3 14L10 21L17 14" stroke="#1A1714" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-    </div>
+    </a>
   </div>
 </section>
+
+<div class="marquee bg-off">
+  <div class="marquee-track">
+    <span>Lifecycle Strategy</span><span class="accent">&#8226;</span>
+    <span>CRM Architecture</span><span class="accent">&#8226;</span>
+    <span>Behavioural Segmentation</span><span class="accent">&#8226;</span>
+    <span>Product Adoption</span><span class="accent">&#8226;</span>
+    <span>Barcelona</span><span class="accent">&#8226;</span>
+    <span>Lifecycle Strategy</span><span class="accent">&#8226;</span>
+    <span>CRM Architecture</span><span class="accent">&#8226;</span>
+    <span>Behavioural Segmentation</span><span class="accent">&#8226;</span>
+    <span>Product Adoption</span><span class="accent">&#8226;</span>
+    <span>Barcelona</span><span class="accent">&#8226;</span>
+  </div>
+</div>
 
 <!-- ============ WHAT I DO ============ -->
 <section class="bg-light" id="what-i-do">
   <div class="wrap">
-    <h2 class="section-title fade-in">What I do</h2>
+    <h2 class="section-title" data-split>What I do</h2>
     <div class="capabilities">
       <div class="cap-block fade-in d1">
         <span class="label">Lifecycle Infrastructure</span>
         <h3 class="cap-title">Building the system behind the message</h3>
-        <p class="cap-desc">Audience segmentation by feature usage and behaviour, automated journey logic, and channel sequencing across email and in-app — built to run across 80+ releases a year.</p>
+        <p class="cap-desc">Audience segmentation by feature usage and behaviour, automated journey logic, and channel sequencing across email and in-app, built to run across 80+ releases a year.</p>
       </div>
       <div class="cap-block fade-in d2">
         <span class="label">Adoption Campaigns</span>
         <h3 class="cap-title">Proving comms move the needle</h3>
-        <p class="cap-desc">Product campaigns with a real control group methodology — not vanity metrics, but measurable causation between communication and feature adoption.</p>
+        <p class="cap-desc">Product campaigns with a real control group methodology. Not vanity metrics, but measurable causation between communication and feature adoption.</p>
       </div>
       <div class="cap-block fade-in d3">
         <span class="label">CRM Architecture</span>
@@ -506,117 +124,46 @@
   </div>
 </section>
 
-<!-- ============ AMENITIZ ============ -->
-<section class="bg-off" id="amenitiz">
+<!-- ============ WORK ============ -->
+<section class="bg-off" id="work">
   <div class="wrap">
-    <div class="case-head fade-in">
-      <span class="label">B2B SaaS · Featured Work</span>
-      <h2 class="case-company">Amenitiz</h2>
-      <p class="case-subline">CRM &amp; Lifecycle Strategy · 2025 – present</p>
-    </div>
-    <p class="case-intro fade-in d1">At Amenitiz I own the entire customer communication layer for a platform used by 15,000+ independent hoteliers across 5 markets. Every feature launch — from strategic releases to minor fixes — goes through email, in-app messaging and product tours that I build and own end to end.</p>
-
-    <div class="stats-bar fade-in d2">
-      <div><span class="stat-number">80+</span><span class="stat-label">releases communicated</span></div>
-      <div><span class="stat-number">1.000&nbsp;€</span><span class="stat-label">MRR/month from referral program</span></div>
-      <div><span class="stat-number">37%</span><span class="stat-label">of support volume resolved by AI</span></div>
-      <div><span class="stat-number">15,000+</span><span class="stat-label">hoteliers reached</span></div>
-    </div>
-
-    <div class="placeholder-row fade-in d3">
-      <div class="placeholder-box"><span>In-app modal</span></div>
-      <div class="placeholder-box"><span>Launch email</span></div>
-      <div class="placeholder-box"><span>Product tour</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ ADOPTION DATA ============ -->
-<section class="bg-light" id="adoption">
-  <div class="wrap">
-    <div class="adoption-head fade-in">
-      <h2 class="section-title">Do product comms move adoption?</h2>
-      <p class="adoption-sub">Yes, +10% on average — measured against a real control group.</p>
-    </div>
-
-    <div class="chart-card fade-in d1">
-      <div class="chart-canvas-wrap">
-        <canvas id="adoptionChart"></canvas>
-      </div>
-    </div>
-
-    <div class="stat-cards fade-in d2">
-      <div class="stat-card">
-        <span class="stat-number">+10%</span>
-        <span class="stat-label">adoption lift (vs real control group)</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-number">1.75x</span>
-        <span class="stat-label">multiplier (on conclusive campaigns)</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-number">~380</span>
-        <span class="stat-label">hotels (adopted features they otherwise would not have)</span>
-      </div>
-    </div>
-
-    <p class="methodology fade-in d3">Hotels with IDs ending in 5 or 7 are permanently excluded from all campaigns — a random selection, not a curated one. This makes it an experiment, not a comparison.</p>
-  </div>
-</section>
-
-<!-- ============ MISCOTA ============ -->
-<section class="bg-light" id="miscota">
-  <div class="wrap">
-    <div class="case-head fade-in">
-      <span class="label">B2C E-commerce · Featured Work</span>
-      <h2 class="case-company">Miscota</h2>
-      <p class="case-subline">CRM &amp; Email Personalisation · 2024 – 2025</p>
-    </div>
-    <p class="case-intro fade-in d1">At Miscota I led content strategy and execution of high-volume personalised CRM campaigns across a database of 500K subscribers. I designed lifecycle journeys using segmentation and dynamic content, and built personalisation logic in AMPscript that adapted every message by language, purchase history and customer behaviour.</p>
-
-    <div class="stats-bar fade-in d2">
-      <div><span class="stat-number">500K</span><span class="stat-label">subscribers</span></div>
-      <div><span class="stat-number">40%</span><span class="stat-label">open rate</span></div>
-      <div><span class="stat-number">25%</span><span class="stat-label">click rate</span></div>
-      <div><span class="stat-number">0.07%</span><span class="stat-label">unsubscribe rate</span></div>
-    </div>
-
-    <div class="code-block fade-in d3">
-      <pre><code>ELSEIF @user_language == "fr" THEN
-  SET @message = "Vos points"
-ELSEIF @user_language == "it" THEN
-  SET @message = "I tuoi punti"
-ELSEIF @user_language == "pt" THEN
-  SET @message = "Os seus pontos"
-ENDIF</code></pre>
-    </div>
-    <p class="code-caption fade-in d3">Personalisation logic that adapted every email by language, purchase history and loyalty points balance — deployed across 500K subscribers via Salesforce Marketing Cloud.</p>
-
-    <div class="placeholder-row fade-in d3" style="grid-template-columns:1fr;margin-top:40px;">
-      <div class="placeholder-box single"><span>Email campaign visual</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ OTHER WORK ============ -->
-<section class="bg-off" id="other-work">
-  <div class="wrap">
-    <h2 class="section-title fade-in">Other work</h2>
-    <p class="section-sub fade-in">Beyond CRM and lifecycle, I've worked across brand, content and social — a few examples.</p>
-
-    <div class="projects">
-      <div class="project-card fade-in d1">
-        <div class="placeholder-box"><span>Oro Jewels</span></div>
-        <span class="label">Brand &amp; Social</span>
-        <h3 class="project-title">Oro Vintage Jewellery</h3>
-        <p class="project-desc">Social media strategy and content direction for a vintage jewellery brand in Amsterdam. Visual campaigns, Instagram and TikTok content, and product photography.</p>
-      </div>
-      <div class="project-card fade-in d2">
-        <div class="placeholder-box"><span>Trendwatching</span></div>
-        <span class="label">Community</span>
-        <h3 class="project-title">Trendwatching</h3>
-        <p class="project-desc">Consumer trend research and community event coordination for a global trends platform, Amsterdam.</p>
-      </div>
+    <span class="label">Selected work</span>
+    <h2 class="section-title" data-split>A closer look</h2>
+    <div class="work-grid">
+      <a href="work-amenitiz.html" class="work-tile large tilt-card" data-cursor="View">
+        <div class="work-tile-panel"></div>
+        <div class="work-tile-content">
+          <span class="label">B2B SaaS</span>
+          <h3 class="work-tile-title">Amenitiz</h3>
+          <p class="work-tile-desc">Owning the entire customer communication layer for 15,000+ hoteliers across 5 markets.</p>
+          <span class="work-tile-cta">View case study <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a href="work-miscota.html" class="work-tile large tilt-card" data-cursor="View">
+        <div class="work-tile-panel"></div>
+        <div class="work-tile-content">
+          <span class="label">B2C E-commerce</span>
+          <h3 class="work-tile-title">Miscota</h3>
+          <p class="work-tile-desc">Personalised CRM journeys in AMPscript across a database of 500K subscribers.</p>
+          <span class="work-tile-cta">View case study <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a href="work-other.html#oro" class="work-tile tilt-card" data-cursor="View">
+        <div class="work-tile-panel"></div>
+        <div class="work-tile-content">
+          <span class="label">Brand &amp; social</span>
+          <h3 class="work-tile-title" style="font-size:clamp(1.5rem,2.6vw,2rem);">Oro Vintage Jewellery</h3>
+          <span class="work-tile-cta">View <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a href="work-other.html#trendwatching" class="work-tile tilt-card" data-cursor="View">
+        <div class="work-tile-panel"></div>
+        <div class="work-tile-content">
+          <span class="label">Community</span>
+          <h3 class="work-tile-title" style="font-size:clamp(1.5rem,2.6vw,2rem);">Trendwatching</h3>
+          <span class="work-tile-cta">View <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
@@ -624,7 +171,7 @@ ENDIF</code></pre>
 <!-- ============ CONTACT ============ -->
 <section class="bg-dark" id="contact">
   <div class="wrap">
-    <h2 class="contact-title fade-in">Looking for someone who can<br>connect product, CRM, and content?</h2>
+    <h2 class="contact-title" data-split>Looking for someone who can connect product, CRM, and content?</h2>
     <div class="contact-details fade-in d1">
       <a href="mailto:raquelmuzquizgil@gmail.com">raquelmuzquizgil@gmail.com</a>
       <a href="tel:+34618815701">+34 618 815 701</a>
@@ -642,142 +189,10 @@ ENDIF</code></pre>
   </div>
 </section>
 
-<footer>© Raquel Muzquiz Gil 2026</footer>
+</main>
 
-<script>
-  // Scroll-triggered fade-in
-  (function(){
-    var els = document.querySelectorAll('.fade-in:not(.visible)');
-    var observer = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if(entry.isIntersecting){
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {threshold:0.15, rootMargin:'0px 0px -60px 0px'});
-    els.forEach(function(el){ observer.observe(el); });
-  })();
+<footer class="site-footer">&copy; Raquel Muzquiz Gil 2026</footer>
 
-  // Scroll indicator click -> next section
-  document.querySelector('.scroll-indicator').addEventListener('click', function(){
-    document.getElementById('what-i-do').scrollIntoView({behavior:'smooth'});
-  });
-  document.querySelector('.scroll-indicator').style.cursor = 'pointer';
-
-  // Adoption chart
-  (function(){
-    var ctx = document.getElementById('adoptionChart').getContext('2d');
-
-    var verticalLinePlugin = {
-      id:'verticalSendLine',
-      afterDraw:function(chart){
-        var idx = 6; // Week 7
-        var xScale = chart.scales.x;
-        var yScale = chart.scales.y;
-        var x = xScale.getPixelForValue(idx);
-        var c = chart.ctx;
-        c.save();
-        c.beginPath();
-        c.setLineDash([4,4]);
-        c.moveTo(x, yScale.top);
-        c.lineTo(x, yScale.bottom);
-        c.strokeStyle = '#1A1714';
-        c.lineWidth = 1;
-        c.stroke();
-        c.setLineDash([]);
-        c.fillStyle = '#1A1714';
-        c.font = '600 11px Inter, sans-serif';
-        c.textAlign = 'center';
-        c.fillText('Send', x, yScale.top - 10);
-        c.restore();
-      }
-    };
-
-    var inlineLabelsPlugin = {
-      id:'inlineLabels',
-      afterDatasetsDraw:function(chart){
-        chart.data.datasets.forEach(function(dataset, i){
-          var meta = chart.getDatasetMeta(i);
-          var last = meta.data[meta.data.length-1];
-          if(!last) return;
-          var c = chart.ctx;
-          c.save();
-          c.fillStyle = dataset.borderColor;
-          c.font = '600 12px Inter, sans-serif';
-          c.textAlign = 'left';
-          c.textBaseline = 'middle';
-          c.fillText(dataset.label, last.x + 10, last.y);
-          c.restore();
-        });
-      }
-    };
-
-    new Chart(ctx, {
-      type:'line',
-      data:{
-        labels:['Week 1','Week 2','Week 3','Week 4','Week 5','Week 6','Week 7','Week 8'],
-        datasets:[
-          {
-            label:'Received campaign',
-            data:[1.0, 1.02, 0.98, 1.03, 1.0, 1.02, 3.3, 1.4],
-            borderColor:'#DC0080',
-            backgroundColor:'#DC0080',
-            borderWidth:2.5,
-            tension:0.35,
-            pointRadius:0,
-            pointHoverRadius:4
-          },
-          {
-            label:'Control group',
-            data:[1.0, 1.0, 1.01, 0.99, 1.0, 1.0, 1.3, 1.05],
-            borderColor:'#5C5A57',
-            backgroundColor:'#5C5A57',
-            borderWidth:2,
-            tension:0.35,
-            pointRadius:0,
-            pointHoverRadius:4
-          }
-        ]
-      },
-      options:{
-        responsive:true,
-        maintainAspectRatio:false,
-        layout:{ padding:{ right:110, top:20 } },
-        plugins:{
-          legend:{ display:false },
-          tooltip:{
-            backgroundColor:'#1A1714',
-            titleFont:{family:'Inter'},
-            bodyFont:{family:'Inter'},
-            padding:10,
-            callbacks:{
-              label:function(ctx){ return ctx.dataset.label + ': ' + ctx.parsed.y.toFixed(2) + 'x'; }
-            }
-          }
-        },
-        scales:{
-          x:{
-            grid:{ display:false },
-            ticks:{ font:{ family:'Inter', size:11 }, color:'#5C5A57' }
-          },
-          y:{
-            min:0,
-            max:4,
-            ticks:{
-              stepSize:1,
-              font:{ family:'Inter', size:11 },
-              color:'#5C5A57',
-              callback:function(value){ return value === 0 ? '0x' : value + 'x normal'; }
-            },
-            grid:{ color:'rgba(26,23,20,0.08)' }
-          }
-        }
-      },
-      plugins:[verticalLinePlugin, inlineLabelsPlugin]
-    });
-  })();
-</script>
-
+<script src="assets/js/main.js"></script>
 </body>
 </html>
