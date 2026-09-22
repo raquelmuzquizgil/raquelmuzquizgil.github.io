@@ -1,6 +1,6 @@
 /* ==========================================================
    Raquel Muzquiz Gil, portfolio
-   Shared interaction layer: cursor, nav, page transitions,
+   Shared interaction layer: nav, page transitions,
    scroll reveal, magnetic elements, tilt cards, counters.
    ========================================================== */
 
@@ -9,50 +9,6 @@
 
   var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var isCoarse = window.matchMedia('(pointer: coarse)').matches;
-
-  /* ---------------- custom cursor ---------------- */
-  (function initCursor() {
-    if (isCoarse || reducedMotion) return;
-    var dot = document.createElement('div');
-    dot.className = 'cursor-dot';
-    var ring = document.createElement('div');
-    ring.className = 'cursor-ring';
-    document.body.appendChild(dot);
-    document.body.appendChild(ring);
-    document.body.classList.add('has-cursor');
-
-    var mx = 0, my = 0, rx = 0, ry = 0, started = false;
-    window.addEventListener('mousemove', function (e) {
-      mx = e.clientX; my = e.clientY;
-      dot.style.transform = 'translate(' + mx + 'px,' + my + 'px) translate(-50%,-50%)';
-      if (!started) {
-        started = true;
-        rx = mx; ry = my;
-        dot.classList.add('is-active');
-        ring.classList.add('is-active');
-      }
-    });
-
-    function loop() {
-      rx += (mx - rx) * 0.16;
-      ry += (my - ry) * 0.16;
-      ring.style.transform = 'translate(' + rx + 'px,' + ry + 'px) translate(-50%,-50%)';
-      requestAnimationFrame(loop);
-    }
-    loop();
-
-    document.querySelectorAll('[data-cursor]').forEach(function (el) {
-      el.addEventListener('mouseenter', function () {
-        var text = el.getAttribute('data-cursor');
-        ring.classList.add('cursor-big');
-        ring.textContent = text && text !== 'true' ? text : '';
-      });
-      el.addEventListener('mouseleave', function () {
-        ring.classList.remove('cursor-big');
-        ring.textContent = '';
-      });
-    });
-  })();
 
   /* ---------------- nav overlay ---------------- */
   (function initNav() {
