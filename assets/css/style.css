@@ -498,10 +498,7 @@ footer.site-footer{
   position:relative;
   width:100%;
   aspect-ratio:3/4;
-  background:
-    repeating-linear-gradient(135deg, rgba(220,0,128,0.07) 0 2px, transparent 2px 18px),
-    linear-gradient(155deg, #EDEAE6 0%, #E2DED8 100%);
-  border:1px dashed var(--border);
+  background:var(--bg-light);
   border-radius:6px;
   display:flex;
   align-items:center;
