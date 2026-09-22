@@ -646,6 +646,13 @@ footer.site-footer{
 }
 
 /* ---------- product showcase (amenitiz) ---------- */
+.amenitiz-showcase-grid{
+  margin-top:64px;
+  display:grid;
+  grid-template-columns:340px 1fr;
+  gap:40px;
+  align-items:start;
+}
 .showcase-label{
   display:block;
   font-size:0.75rem;
@@ -916,6 +923,7 @@ footer.site-footer{
   .lang-demo{grid-template-columns:1fr;text-align:center;}
   .lang-buttons{justify-content:center;}
   .lang-proof{grid-template-columns:1fr;}
+  .amenitiz-showcase-grid{grid-template-columns:1fr;gap:56px;}
   .email-preview-wrap{max-width:280px;}
   .email-preview-window{height:380px;}
   .project-section{grid-template-columns:1fr;}
