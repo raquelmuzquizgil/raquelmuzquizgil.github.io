@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Miscota · Raquel Muzquiz Gil</title>
+<meta name="description" content="CRM and email personalisation for Miscota, a B2C pet e-commerce brand with a database of 500K subscribers.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-nav">
+  <a href="index.html" class="nav-logo">Raquel Muzquiz Gil</a>
+  <button class="nav-toggle magnetic" aria-label="Open menu"><span></span><span></span><span></span></button>
+</header>
+
+<div class="nav-overlay">
+  <nav>
+    <a class="nav-link" href="index.html"><span class="nav-link-inner"><span>Home</span></span></a>
+    <a class="nav-link" href="index.html#work"><span class="nav-link-inner"><span>Work</span></span></a>
+    <a class="nav-link" href="work-amenitiz.html"><span class="nav-link-inner"><span>Amenitiz</span></span></a>
+    <a class="nav-link" href="work-miscota.html"><span class="nav-link-inner"><span>Miscota</span></span></a>
+    <a class="nav-link" href="work-other.html"><span class="nav-link-inner"><span>Other work</span></span></a>
+    <a class="nav-link" href="index.html#contact"><span class="nav-link-inner"><span>Contact</span></span></a>
+  </nav>
+  <div class="nav-overlay-footer">
+    <a href="mailto:raquelmuzquizgil@gmail.com">raquelmuzquizgil@gmail.com</a>
+    <span>Barcelona</span>
+  </div>
+</div>
+
+<main>
+
+<section class="bg-light">
+  <div class="wrap">
+    <a href="index.html#work" class="back-link magnetic"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> All work</a>
+    <div class="case-head" style="margin-top:36px;">
+      <span class="label">B2C E-commerce &#8226; Featured work</span>
+      <h1 class="case-company" data-split>Miscota</h1>
+      <p class="case-subline">CRM &amp; Email Personalisation &#8226; 2024, 2025</p>
+    </div>
+    <p class="case-intro fade-in">At Miscota I led content strategy and execution of high-volume personalised CRM campaigns across a database of 500K subscribers. I designed lifecycle journeys using segmentation and dynamic content, and built personalisation logic in AMPscript that adapted every message by language, purchase history and customer behaviour.</p>
+
+    <div class="stats-bar fade-in d1">
+      <div><span class="stat-number" data-count="500" data-suffix="K">0</span><span class="stat-label">subscribers</span></div>
+      <div><span class="stat-number" data-count="40" data-suffix="%">0</span><span class="stat-label">open rate</span></div>
+      <div><span class="stat-number" data-count="25" data-suffix="%">0</span><span class="stat-label">click rate</span></div>
+      <div><span class="stat-number" data-count="0.07" data-decimals="2" data-suffix="%">0</span><span class="stat-label">unsubscribe rate</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PERSONALISATION DEMO ============ -->
+<section class="bg-off">
+  <div class="wrap">
+    <span class="label">See it work</span>
+    <h2 class="section-title" data-split>One line of logic, every language</h2>
+    <p class="section-sub">Click a language. The AMPscript below highlights the branch that renders, and the message updates live, the same logic running across 500K inboxes.</p>
+
+    <div class="lang-demo fade-in d1">
+      <div class="lang-buttons">
+        <button data-lang="fr" class="active magnetic" data-cursor>FR</button>
+        <button data-lang="it" class="magnetic" data-cursor>IT</button>
+        <button data-lang="pt" class="magnetic" data-cursor>PT</button>
+      </div>
+      <div class="lang-output">
+        <span class="lang-msg" id="langMsg" data-fr="Vos points" data-it="I tuoi punti" data-pt="Os seus pontos">Vos points</span>
+      </div>
+    </div>
+
+    <div class="code-block fade-in d2">
+      <pre><code id="codeBlock"><span class="code-line active" data-lang="fr">ELSEIF @user_language == "fr" THEN
+  SET @message = "Vos points"</span>
+<span class="code-line" data-lang="it">ELSEIF @user_language == "it" THEN
+  SET @message = "I tuoi punti"</span>
+<span class="code-line" data-lang="pt">ELSEIF @user_language == "pt" THEN
+  SET @message = "Os seus pontos"</span>
+ENDIF</code></pre>
+    </div>
+    <p class="code-caption fade-in d3">Personalisation logic that adapted every email by language, purchase history and loyalty points balance, deployed across 500K subscribers via Salesforce Marketing Cloud.</p>
+
+    <div class="catalog-grid fade-in d3">
+      <div class="placeholder-box tilt-card"><span>Campaign email</span></div>
+      <div class="placeholder-box tilt-card"><span>Loyalty email</span></div>
+      <div class="placeholder-box tilt-card"><span>Personalised banner</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="next-project">
+  <div class="wrap">
+    <span class="label">Next project</span>
+    <a href="work-other.html" class="magnetic">
+      <span class="next-title">Other work <svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16M14 6l6 6-6 6" stroke="#DC0080" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </a>
+  </div>
+</div>
+
+<!-- ============ CONTACT ============ -->
+<section class="bg-dark" id="contact">
+  <div class="wrap">
+    <h2 class="contact-title" data-split>Looking for someone who can connect product, CRM, and content?</h2>
+    <div class="contact-details fade-in d1">
+      <a href="mailto:raquelmuzquizgil@gmail.com">raquelmuzquizgil@gmail.com</a>
+      <a href="tel:+34618815701">+34 618 815 701</a>
+      <a href="https://linkedin.com/in/raquelmuzquiz" target="_blank" rel="noopener">linkedin.com/in/raquelmuzquiz</a>
+    </div>
+    <div class="tags fade-in d2">
+      <span class="tag">Product Marketing</span>
+      <span class="tag">CRM</span>
+      <span class="tag">Lifecycle Strategy</span>
+      <span class="tag">Behavioural Segmentation</span>
+      <span class="tag">Content</span>
+      <span class="tag">HTML/CSS</span>
+      <span class="tag">AMPscript</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">&copy; Raquel Muzquiz Gil 2026</footer>
+
+<script src="assets/js/main.js"></script>
+<script>
+(function () {
+  var buttons = document.querySelectorAll('.lang-buttons button');
+  var msg = document.getElementById('langMsg');
+  var lines = document.querySelectorAll('.code-line');
+  if (!buttons.length || !msg) return;
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var lang = btn.getAttribute('data-lang');
+      buttons.forEach(function (b) { b.classList.toggle('active', b === btn); });
+      lines.forEach(function (l) { l.classList.toggle('active', l.getAttribute('data-lang') === lang); });
+
+      msg.classList.add('swap');
+      setTimeout(function () {
+        msg.textContent = msg.getAttribute('data-' + lang);
+        msg.classList.remove('swap');
+      }, 200);
+    });
+  });
+})();
+</script>
+</body>
+</html>
