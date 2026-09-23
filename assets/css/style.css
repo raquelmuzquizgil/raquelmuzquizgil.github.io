@@ -545,6 +545,7 @@ footer.site-footer{
   grid-template-columns:repeat(3,1fr);
   gap:48px;
 }
+.capabilities.two-col{grid-template-columns:repeat(2,1fr);}
 .cap-block{
   padding-left:20px;
   border-left:2px solid var(--border);
@@ -963,6 +964,7 @@ footer.site-footer{
   .hero-photo-wrap{justify-self:center;max-width:280px;order:-1;}
   .hero-badge{top:auto;bottom:-20px;right:10px;}
   .capabilities{grid-template-columns:1fr;gap:40px;}
+  .capabilities.two-col{grid-template-columns:1fr;}
   .work-grid{grid-template-columns:1fr;}
   .stats-bar{grid-template-columns:repeat(2,1fr);}
   .placeholder-row{grid-template-columns:1fr 1fr;}
