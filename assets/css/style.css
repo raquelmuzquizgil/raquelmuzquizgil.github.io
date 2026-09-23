@@ -885,12 +885,6 @@ footer.site-footer{
   grid-template-columns:repeat(3,1fr);
   gap:24px;
 }
-.lang-proof{
-  margin-top:24px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:24px;
-}
 .code-result-grid{
   margin-top:24px;
   display:grid;
@@ -899,7 +893,8 @@ footer.site-footer{
   align-items:center;
 }
 .code-result-grid .code-block{overflow-x:auto;}
-.code-result-image{aspect-ratio:483/353;height:auto;width:100%;}
+.code-result-grid .email-preview-wrap{max-width:none;}
+.code-result-grid .email-preview-window{height:420px;}
 .journey-proof-grid{
   margin-top:24px;
   display:grid;
@@ -919,6 +914,8 @@ footer.site-footer{
 .shot-card.autoship{aspect-ratio:770/900;}
 .shot-card.es-shot{aspect-ratio:700/892;}
 .shot-card.en-shot{aspect-ratio:700/770;}
+.shot-card.welcome{aspect-ratio:1006/1366;}
+.shot-card.reactivation{aspect-ratio:412/1110;}
 .lang-proof-item{position:relative;max-width:280px;}
 .lang-proof-tag{
   position:absolute;
@@ -932,8 +929,15 @@ footer.site-footer{
   padding:4px 10px;
   border-radius:20px;
 }
-.newsletter-showcase{margin-top:24px;}
-.newsletter-showcase .email-preview-wrap{max-width:300px;}
+.lifestyle-grid{
+  margin-top:24px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  align-items:start;
+}
+.lifestyle-grid .email-preview-wrap{max-width:none;}
+.lifestyle-hint{margin-top:10px;font-size:0.82rem;color:var(--text-secondary);}
 
 /* ---------- other work ---------- */
 .other-hero{padding-top:200px;}
@@ -981,10 +985,10 @@ footer.site-footer{
   .catalog-grid{grid-template-columns:1fr 1fr;}
   .lang-demo{grid-template-columns:1fr;text-align:center;}
   .lang-buttons{justify-content:center;}
-  .lang-proof{grid-template-columns:1fr;}
   .journey-proof-grid{grid-template-columns:1fr;}
+  .lifestyle-grid{grid-template-columns:1fr;}
+  .code-result-grid .email-preview-window{height:340px;}
   .code-result-grid{grid-template-columns:1fr;}
-  .code-result-image{max-width:360px;margin:0 auto;}
   .amenitiz-showcase-grid{grid-template-columns:1fr;gap:56px;}
   .amenitiz-showcase-grid.even-cols{grid-template-columns:1fr;}
   .product-tour-row{grid-template-columns:1fr;gap:24px;}
