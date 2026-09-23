@@ -869,12 +869,12 @@ footer.site-footer{
 .code-result-grid{
   margin-top:24px;
   display:grid;
-  grid-template-columns:1fr 400px;
+  grid-template-columns:1fr 360px;
   gap:24px;
-  align-items:stretch;
+  align-items:center;
 }
 .code-result-grid .code-block{overflow-x:auto;}
-.code-result-image{aspect-ratio:auto;height:100%;}
+.code-result-image{aspect-ratio:483/353;height:auto;width:100%;}
 .banner-showcase{margin-top:24px;max-width:600px;}
 .lang-proof-item{
   position:relative;
@@ -942,7 +942,7 @@ footer.site-footer{
   .lang-buttons{justify-content:center;}
   .lang-proof{grid-template-columns:1fr;}
   .code-result-grid{grid-template-columns:1fr;}
-  .code-result-image{height:320px;}
+  .code-result-image{max-width:360px;margin:0 auto;}
   .amenitiz-showcase-grid{grid-template-columns:1fr;gap:56px;}
   .product-tour-row{grid-template-columns:1fr;gap:24px;}
   .tour-stepper{max-width:100%;}

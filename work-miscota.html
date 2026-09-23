@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=11">
+<link rel="stylesheet" href="assets/css/style.css?v=12">
 </head>
 <body>
 
@@ -92,13 +92,13 @@ ENDIF</code></pre>
     </div>
     <p class="code-caption fade-in d3">Personalisation logic that adapted every email across six languages, purchase history and loyalty points balance, deployed across 500K subscribers via Salesforce Marketing Cloud.</p>
 
-    <span class="label" style="margin-top:56px;display:block;">The code &#8594; the result</span>
-    <p class="section-sub" style="margin-top:8px;">The same logic in production: the AMPscript that builds a customer's loyalty balance message, next to what actually lands in their inbox.</p>
+    <span class="label" style="margin-top:56px;display:block;">This exact branch, live in an inbox</span>
+    <p class="section-sub" style="margin-top:8px;">Below is the Spanish branch of that same script, the one that assembled the loyalty card a real subscriber received.</p>
     <div class="code-result-grid fade-in d2">
       <div class="code-block" style="margin-top:0;">
-        <pre><code><span class="code-line active">ELSEIF @user_language == "pt" THEN
-  SET @first_line = CONCAT(@balance_wallet, " pontos")
-  SET @second_line = CONCAT(@message, " expiram a ", @next_balance_wallet_expiry)
+        <pre><code><span class="code-line active">ELSEIF @user_language == "es" THEN
+  SET @first_line = CONCAT(@balance_wallet, " puntos")
+  SET @second_line = CONCAT(@message, " caducan el ", @next_balance_wallet_expiry)
 ENDIF</span>
 ]%%
 
@@ -114,7 +114,7 @@ ENDIF</span>
       <div class="placeholder-box tilt-card code-result-image"><img src="assets/img/miscota-loyalty.webp" alt="Miscota loyalty points balance shown to a customer, the rendered result of the AMPscript alongside it" class="project-img"></div>
     </div>
 
-    <span class="label" style="margin-top:56px;display:block;">In the wild</span>
+    <span class="label" style="margin-top:56px;display:block;">More campaigns I wrote and built</span>
     <p class="section-sub" style="margin-top:8px;">Two parasite-prevention campaigns from the CRM calendar: one on treatment products like pipettes and collars, the other on grooming care.</p>
     <div class="lang-proof fade-in d3">
       <div class="lang-proof-item">
@@ -168,7 +168,7 @@ ENDIF</span>
 
 <footer class="site-footer">&copy; Raquel Muzquiz Gil 2026</footer>
 
-<script src="assets/js/main.js?v=11"></script>
+<script src="assets/js/main.js?v=12"></script>
 <script>
 (function () {
   var buttons = document.querySelectorAll('.lang-buttons button');
