@@ -923,32 +923,53 @@ footer.site-footer{
 
 /* ---------- phone mockup frame ---------- */
 .phone-frame{
-  background:var(--dark);
-  border-radius:32px;
-  padding:14px 12px 18px;
-  box-shadow:0 24px 48px rgba(26,23,20,0.16);
+  position:relative;
+  max-width:300px;
+  background:#FCFBFA;
+  border:1px solid var(--border);
+  border-radius:42px;
+  padding:16px 12px 20px;
+  box-shadow:0 30px 54px rgba(26,23,20,0.13), 0 6px 18px rgba(26,23,20,0.05);
+}
+.phone-frame::before{
+  content:'';
+  position:absolute;
+  right:-2px;top:88px;
+  width:3px;height:58px;
+  background:var(--border);
+  border-radius:2px 0 0 2px;
+}
+.phone-frame::after{
+  content:'';
+  position:absolute;
+  left:-2px;top:64px;
+  width:3px;height:32px;
+  background:var(--border);
+  border-radius:0 2px 2px 0;
+  box-shadow:0 46px 0 var(--border);
 }
 .phone-frame-notch{
-  width:40px;height:4px;
-  background:rgba(240,238,234,0.3);
-  border-radius:3px;
-  margin:0 auto 12px;
+  width:76px;height:22px;
+  background:var(--dark);
+  border-radius:14px;
+  margin:0 auto 14px;
 }
 .phone-frame-home{
-  width:100px;height:4px;
-  background:rgba(240,238,234,0.3);
+  width:112px;height:4px;
+  background:var(--border);
   border-radius:3px;
   margin:14px auto 0;
 }
 .phone-frame-screen{
-  border-radius:20px;
+  border-radius:28px;
   overflow:hidden;
   background:var(--bg-light);
 }
 .phone-frame-screen img{width:100%;height:100%;object-fit:cover;display:block;}
-.phone-frame .tour-frame{border-radius:20px;background:var(--bg-light);}
+.phone-frame .tour-frame{border-radius:28px;background:var(--bg-light);}
+.phone-frame .email-preview-window{border-radius:28px;}
+.phone-frame-screen .email-preview-img{height:auto;object-fit:unset;}
 .newsletter-showcase{margin-top:24px;}
-.newsletter-showcase .tour-stepper{max-width:320px;}
 
 /* ---------- other work ---------- */
 .other-hero{padding-top:200px;}
