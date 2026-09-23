@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=10">
+<link rel="stylesheet" href="assets/css/style.css?v=11">
 </head>
 <body>
 
@@ -43,7 +43,7 @@
       <h1 class="case-company" data-split>Miscota</h1>
       <p class="case-subline">CRM &amp; Email Personalisation &#8226; 2024, 2025</p>
     </div>
-    <p class="case-intro fade-in">At Miscota I led content strategy and execution of high-volume personalised CRM campaigns across a database of 500K subscribers. I designed lifecycle journeys using segmentation and dynamic content, and built personalisation logic in AMPscript that adapted every message by language, purchase history and customer behaviour.</p>
+    <p class="case-intro fade-in">At Miscota I led content strategy and execution of high-volume personalised CRM campaigns across a database of 500K subscribers. I designed lifecycle journeys using segmentation and dynamic content, and built personalisation logic in AMPscript that adapted every message across six languages (English, Spanish, French, Italian, Portuguese and German), by purchase history and customer behaviour.</p>
 
     <div class="stats-bar fade-in d1">
       <div><span class="stat-number" data-count="500" data-suffix="K">0</span><span class="stat-label">subscribers</span></div>
@@ -59,29 +59,60 @@
   <div class="wrap">
     <span class="label">See it work</span>
     <h2 class="section-title" data-split>One line of logic, every language</h2>
-    <p class="section-sub">Click a language. The AMPscript below highlights the branch that renders, and the message updates live, the same logic running across 500K inboxes.</p>
+    <p class="section-sub">Click a language. The AMPscript below highlights the branch that renders, and the message updates live, the same logic running across 500K inboxes in six languages.</p>
 
     <div class="lang-demo fade-in d1">
       <div class="lang-buttons">
-        <button data-lang="fr" class="active magnetic">FR</button>
+        <button data-lang="en" class="active magnetic">EN</button>
+        <button data-lang="es" class="magnetic">ES</button>
+        <button data-lang="fr" class="magnetic">FR</button>
         <button data-lang="it" class="magnetic">IT</button>
         <button data-lang="pt" class="magnetic">PT</button>
+        <button data-lang="de" class="magnetic">DE</button>
       </div>
       <div class="lang-output">
-        <span class="lang-msg" id="langMsg" data-fr="Vos points" data-it="I tuoi punti" data-pt="Os seus pontos">Vos points</span>
+        <span class="lang-msg" id="langMsg" data-en="Your points" data-es="Tus puntos" data-fr="Vos points" data-it="I tuoi punti" data-pt="Os seus pontos" data-de="Deine Punkte">Your points</span>
       </div>
     </div>
 
     <div class="code-block fade-in d2">
-      <pre><code id="codeBlock"><span class="code-line active" data-lang="fr">ELSEIF @user_language == "fr" THEN
+      <pre><code id="codeBlock"><span class="code-line active" data-lang="en">IF @user_language == "en" THEN
+  SET @message = "Your points"</span>
+<span class="code-line" data-lang="es">ELSEIF @user_language == "es" THEN
+  SET @message = "Tus puntos"</span>
+<span class="code-line" data-lang="fr">ELSEIF @user_language == "fr" THEN
   SET @message = "Vos points"</span>
 <span class="code-line" data-lang="it">ELSEIF @user_language == "it" THEN
   SET @message = "I tuoi punti"</span>
 <span class="code-line" data-lang="pt">ELSEIF @user_language == "pt" THEN
   SET @message = "Os seus pontos"</span>
+<span class="code-line" data-lang="de">ELSEIF @user_language == "de" THEN
+  SET @message = "Deine Punkte"</span>
 ENDIF</code></pre>
     </div>
-    <p class="code-caption fade-in d3">Personalisation logic that adapted every email by language, purchase history and loyalty points balance, deployed across 500K subscribers via Salesforce Marketing Cloud.</p>
+    <p class="code-caption fade-in d3">Personalisation logic that adapted every email across six languages, purchase history and loyalty points balance, deployed across 500K subscribers via Salesforce Marketing Cloud.</p>
+
+    <span class="label" style="margin-top:56px;display:block;">The code &#8594; the result</span>
+    <p class="section-sub" style="margin-top:8px;">The same logic in production: the AMPscript that builds a customer's loyalty balance message, next to what actually lands in their inbox.</p>
+    <div class="code-result-grid fade-in d2">
+      <div class="code-block" style="margin-top:0;">
+        <pre><code><span class="code-line active">ELSEIF @user_language == "pt" THEN
+  SET @first_line = CONCAT(@balance_wallet, " pontos")
+  SET @second_line = CONCAT(@message, " expiram a ", @next_balance_wallet_expiry)
+ENDIF</span>
+]%%
+
+&lt;div style="max-width: 580px; text-align: center; margin: 0 auto;"&gt;
+  &lt;p style="color: #212738; font-size: 30px; margin: 0;"&gt;
+    &lt;span style="color: #097094; font-weight: bold;"&gt;%%=v(@first_line)=%%&lt;/span&gt;
+  &lt;/p&gt;
+  &lt;p style="color: #212738; font-size: 16px; margin: 10px 0 0;"&gt;
+    &lt;span style="color: #097094; font-weight: bold;"&gt;%%=v(@second_line)=%%&lt;/span&gt;
+  &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+      <div class="placeholder-box tilt-card code-result-image"><img src="assets/img/miscota-loyalty.webp" alt="Miscota loyalty points balance shown to a customer, the rendered result of the AMPscript alongside it" class="project-img"></div>
+    </div>
 
     <span class="label" style="margin-top:56px;display:block;">In the wild</span>
     <p class="section-sub" style="margin-top:8px;">Two parasite-prevention campaigns from the CRM calendar: one on treatment products like pipettes and collars, the other on grooming care.</p>
@@ -96,8 +127,8 @@ ENDIF</code></pre>
       </div>
     </div>
 
-    <div class="catalog-grid catalog-grid-2 fade-in d3">
-      <div class="placeholder-box tilt-card"><img src="assets/img/miscota-loyalty.webp" alt="Miscota loyalty points balance shown to a customer" class="project-img"></div>
+    <span class="label" style="margin-top:56px;display:block;">Personalised banner</span>
+    <div class="banner-showcase fade-in d3">
       <div class="placeholder-box tilt-card"><img src="assets/img/miscota-banner.webp" alt="Personalised Miscota promotional banner" class="project-img" style="object-position:left;"></div>
     </div>
   </div>
@@ -137,7 +168,7 @@ ENDIF</code></pre>
 
 <footer class="site-footer">&copy; Raquel Muzquiz Gil 2026</footer>
 
-<script src="assets/js/main.js?v=10"></script>
+<script src="assets/js/main.js?v=11"></script>
 <script>
 (function () {
   var buttons = document.querySelectorAll('.lang-buttons button');
