@@ -673,6 +673,7 @@ footer.site-footer{
   gap:40px;
   align-items:start;
 }
+.amenitiz-showcase-grid.even-cols{grid-template-columns:1fr 1fr;}
 .product-tour-row{
   display:grid;
   grid-template-columns:640px 1fr;
@@ -977,6 +978,7 @@ footer.site-footer{
   .code-result-grid{grid-template-columns:1fr;}
   .code-result-image{max-width:360px;margin:0 auto;}
   .amenitiz-showcase-grid{grid-template-columns:1fr;gap:56px;}
+  .amenitiz-showcase-grid.even-cols{grid-template-columns:1fr;}
   .product-tour-row{grid-template-columns:1fr;gap:24px;}
   .tour-stepper{max-width:100%;}
   .email-preview-wrap{max-width:280px;}
