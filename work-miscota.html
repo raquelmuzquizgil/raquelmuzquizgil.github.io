@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=17">
+<link rel="stylesheet" href="assets/css/style.css?v=18">
 </head>
 <body>
 
@@ -77,8 +77,20 @@
     <span class="label" style="margin-top:56px;display:block;">Two of these journeys, live</span>
     <p class="section-sub" style="margin-top:8px;">The repurchase nudge on the left, and the autoship follow-up it leads to on the right: a customer who's bought the same item enough times gets offered a discount to repeat it, then a one-click way to never run out of it again.</p>
     <div class="journey-proof-grid fade-in d1">
-      <div class="journey-proof-item repurchase"><img src="assets/img/miscota-repurchase.webp" alt="Miscota repurchase campaign offering a time-limited discount on a customer's favourite products" class="project-img"></div>
-      <div class="journey-proof-item autoship"><img src="assets/img/miscota-autoship.webp" alt="Miscota autoship suggestion nudging a repeat buyer toward a recurring subscription for their pet's favourite product" class="project-img"></div>
+      <div class="journey-proof-item">
+        <div class="phone-frame">
+          <div class="phone-frame-notch"></div>
+          <div class="phone-frame-screen repurchase"><img src="assets/img/miscota-repurchase.webp" alt="Miscota repurchase campaign offering a time-limited discount on a customer's favourite products" class="project-img"></div>
+          <div class="phone-frame-home"></div>
+        </div>
+      </div>
+      <div class="journey-proof-item">
+        <div class="phone-frame">
+          <div class="phone-frame-notch"></div>
+          <div class="phone-frame-screen autoship"><img src="assets/img/miscota-autoship.webp" alt="Miscota autoship suggestion nudging a repeat buyer toward a recurring subscription for their pet's favourite product" class="project-img"></div>
+          <div class="phone-frame-home"></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -148,19 +160,42 @@ ENDIF</code></pre>
     <p class="section-sub" style="margin-top:8px;">Not every send was lifecycle-triggered. These two parasite-prevention campaigns are examples of the batch content I also wrote and built for the CRM calendar: one on treatment products like pipettes and collars, the other on grooming care.</p>
     <div class="lang-proof fade-in d3">
       <div class="lang-proof-item">
-        <img src="assets/img/miscota-localisation-es.webp" alt="Miscota parasite prevention campaign about treatment products" class="project-img">
+        <div class="phone-frame">
+          <div class="phone-frame-notch"></div>
+          <div class="phone-frame-screen es-shot"><img src="assets/img/miscota-localisation-es.webp" alt="Miscota parasite prevention campaign about treatment products" class="project-img"></div>
+          <div class="phone-frame-home"></div>
+        </div>
         <span class="lang-proof-tag">ES</span>
       </div>
       <div class="lang-proof-item">
-        <img src="assets/img/miscota-localisation-en.webp" alt="Miscota parasite prevention campaign about grooming care" class="project-img">
+        <div class="phone-frame">
+          <div class="phone-frame-notch"></div>
+          <div class="phone-frame-screen en-shot"><img src="assets/img/miscota-localisation-en.webp" alt="Miscota parasite prevention campaign about grooming care" class="project-img"></div>
+          <div class="phone-frame-home"></div>
+        </div>
         <span class="lang-proof-tag">EN</span>
       </div>
     </div>
 
-    <span class="label" style="margin-top:56px;display:block;">Web banner copywriting</span>
-    <p class="section-sub" style="margin-top:8px;">Written in the pet's own voice, one of the recurring tones I used across the content calendar to keep grooming and care content from reading like a manual.</p>
-    <div class="banner-showcase fade-in d3">
-      <div class="placeholder-box tilt-card"><img src="assets/img/miscota-banner.webp" alt="Miscota promotional banner written in the pet's voice, promoting a grooming routine" class="project-img" style="object-position:left;"></div>
+    <span class="label" style="margin-top:56px;display:block;">A full newsletter, start to finish</span>
+    <p class="section-sub" style="margin-top:8px;">One complete send from the content calendar: education, a bestseller push with a discount code, social proof and a cross-sell block, all in one email. Click through to see how it's put together.</p>
+    <div class="newsletter-showcase fade-in d3">
+      <div class="tour-stepper" data-tour="newsletter">
+        <div class="phone-frame">
+          <div class="phone-frame-notch"></div>
+          <div class="tour-frame">
+            <img src="assets/img/miscota-newsletter-1.webp" class="tour-img active" alt="Step 1: Newsletter hero, product carousel and symptoms education">
+            <img src="assets/img/miscota-newsletter-2.webp" class="tour-img" alt="Step 2: Bestseller product push with a discount code and video testimonial">
+            <img src="assets/img/miscota-newsletter-3.webp" class="tour-img" alt="Step 3: Cross-sell offers, cashback and loyalty points footer">
+          </div>
+          <div class="phone-frame-home"></div>
+        </div>
+        <div class="tour-controls">
+          <button class="tour-back magnetic" disabled>Back</button>
+          <span class="tour-count"><span class="tour-current">1</span> / <span class="tour-total">3</span></span>
+          <button class="tour-next magnetic">Next</button>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -199,7 +234,7 @@ ENDIF</code></pre>
 
 <footer class="site-footer">&copy; Raquel Muzquiz Gil 2026</footer>
 
-<script src="assets/js/main.js?v=17"></script>
+<script src="assets/js/main.js?v=18"></script>
 <script>
 (function () {
   var buttons = document.querySelectorAll('.lang-buttons button');
