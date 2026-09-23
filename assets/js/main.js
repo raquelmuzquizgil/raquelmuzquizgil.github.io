@@ -252,4 +252,17 @@
     });
   })();
 
+  /* ---------------- expandable proof under journey cards ---------------- */
+  (function initCapToggles() {
+    document.querySelectorAll('.cap-toggle').forEach(function (btn) {
+      var target = document.getElementById(btn.getAttribute('data-target'));
+      if (!target) return;
+      btn.addEventListener('click', function () {
+        var open = target.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.firstChild.textContent = open ? 'Hide the email ' : 'See the email ';
+      });
+    });
+  })();
+
 })();

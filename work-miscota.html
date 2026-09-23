@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=23">
+<link rel="stylesheet" href="assets/css/style.css?v=24">
 </head>
 <body>
 
@@ -61,6 +61,10 @@
         <span class="label">First purchase</span>
         <h3 class="cap-title">A welcome sequence that learned who it was talking to</h3>
         <p class="cap-desc">Introduced the full range across categories, while building out each customer's profile, their pet, and buying signals from what they filled in and browsed, so every message after it could be shaped around a real animal, not a generic subscriber.</p>
+        <button class="cap-toggle magnetic" aria-expanded="false" data-target="proof-first">See the email <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="cap-proof" id="proof-first">
+          <div class="shot-card welcome"><img src="assets/img/miscota-welcome.webp" alt="Miscota welcome email with a first-purchase discount coupon and Miscota Family loyalty benefits" class="project-img"></div>
+        </div>
       </div>
       <div class="cap-block fade-in d2">
         <span class="label">Abandoned cart</span>
@@ -71,28 +75,19 @@
         <span class="label">Repurchase</span>
         <h3 class="cap-title">Turning repeat buyers into subscribers</h3>
         <p class="cap-desc">Product suggestions generated from a customer's last purchase, plus pattern detection: when someone bought the same item several times, the journey nudged them toward autoship, turning a repeat purchase into recurring revenue.</p>
+        <button class="cap-toggle magnetic" aria-expanded="false" data-target="proof-repurchase">See the email <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="cap-proof" id="proof-repurchase">
+          <div class="shot-card repurchase"><img src="assets/img/miscota-repurchase.webp" alt="Miscota repurchase campaign offering a time-limited discount on a customer's favourite products" class="project-img"></div>
+        </div>
       </div>
       <div class="cap-block fade-in d3">
         <span class="label">Reactivation</span>
         <h3 class="cap-title">Winning back customers who'd gone quiet</h3>
         <p class="cap-desc">A win-back send for dormant customers, leading with a discount and free shipping and closing with the reasons to come back, timed to catch someone right before they'd write the brand off for good.</p>
-      </div>
-    </div>
-
-    <span class="label" style="margin-top:56px;display:block;">Three of these journeys, live</span>
-    <p class="section-sub" style="margin-top:8px;">The welcome coupon a new customer gets, the repurchase nudge and its autoship follow-up, and the win-back send for a dormant one.</p>
-    <div class="journey-proof-grid fade-in d1">
-      <div class="journey-proof-item">
-        <div class="shot-card welcome"><img src="assets/img/miscota-welcome.webp" alt="Miscota welcome email with a first-purchase discount coupon and Miscota Family loyalty benefits" class="project-img"></div>
-      </div>
-      <div class="journey-proof-item">
-        <div class="shot-card repurchase"><img src="assets/img/miscota-repurchase.webp" alt="Miscota repurchase campaign offering a time-limited discount on a customer's favourite products" class="project-img"></div>
-      </div>
-      <div class="journey-proof-item">
-        <div class="shot-card autoship"><img src="assets/img/miscota-autoship.webp" alt="Miscota autoship suggestion nudging a repeat buyer toward a recurring subscription for their pet's favourite product" class="project-img"></div>
-      </div>
-      <div class="journey-proof-item">
-        <div class="shot-card reactivation"><img src="assets/img/miscota-reactivation.webp" alt="Miscota reactivation email winning back a dormant customer with a discount and free shipping" class="project-img"></div>
+        <button class="cap-toggle magnetic" aria-expanded="false" data-target="proof-reactivation">See the email <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="cap-proof" id="proof-reactivation">
+          <div class="shot-card reactivation"><img src="assets/img/miscota-reactivation.webp" alt="Miscota reactivation email winning back a dormant customer with a discount and free shipping" class="project-img"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -166,14 +161,6 @@ ENDIF</code></pre>
     <span class="label" style="margin-top:56px;display:block;">Beyond the triggered journeys: lifestyle content</span>
     <p class="section-sub" style="margin-top:8px;">Not every send was lifecycle-triggered. This is the seasonal, educational content I also wrote and built for the calendar: parasite prevention, grooming care and joint health, in the same voice as everything else here.</p>
     <div class="lifestyle-grid fade-in d3">
-      <div class="lang-proof-item">
-        <div class="shot-card es-shot"><img src="assets/img/miscota-localisation-es.webp" alt="Miscota parasite prevention campaign about treatment products" class="project-img"></div>
-        <span class="lang-proof-tag">ES</span>
-      </div>
-      <div class="lang-proof-item">
-        <div class="shot-card en-shot"><img src="assets/img/miscota-localisation-en.webp" alt="Miscota parasite prevention campaign about grooming care" class="project-img"></div>
-        <span class="lang-proof-tag">EN</span>
-      </div>
       <div>
         <div class="email-preview-wrap">
           <div class="email-preview-window" style="height:460px;">
@@ -181,6 +168,12 @@ ENDIF</code></pre>
           </div>
         </div>
         <p class="lifestyle-hint">A full newsletter, hover to scroll through it</p>
+      </div>
+      <div class="lang-proof-item">
+        <div class="shot-card es-shot"><img src="assets/img/miscota-localisation-es.webp" alt="Miscota parasite prevention campaign about treatment products" class="project-img"></div>
+      </div>
+      <div class="lang-proof-item">
+        <div class="shot-card en-shot"><img src="assets/img/miscota-localisation-en.webp" alt="Miscota parasite prevention campaign about grooming care" class="project-img"></div>
       </div>
     </div>
   </div>
@@ -220,7 +213,7 @@ ENDIF</code></pre>
 
 <footer class="site-footer">&copy; Raquel Muzquiz Gil 2026</footer>
 
-<script src="assets/js/main.js?v=23"></script>
+<script src="assets/js/main.js?v=24"></script>
 <script>
 (function () {
   var buttons = document.querySelectorAll('.lang-buttons button');
