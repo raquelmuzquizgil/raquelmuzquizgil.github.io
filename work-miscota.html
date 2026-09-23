@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=12">
+<link rel="stylesheet" href="assets/css/style.css?v=13">
 </head>
 <body>
 
@@ -58,43 +58,10 @@
 <section class="bg-off">
   <div class="wrap">
     <span class="label">See it work</span>
-    <h2 class="section-title" data-split>One line of logic, every language</h2>
-    <p class="section-sub">Click a language. The AMPscript below highlights the branch that renders, and the message updates live, the same logic running across 500K inboxes in six languages.</p>
+    <h2 class="section-title" data-split>The code behind a real email</h2>
+    <p class="section-sub">This branch of AMPscript is what assembled the loyalty card below, sent to a real Spanish-speaking subscriber.</p>
 
-    <div class="lang-demo fade-in d1">
-      <div class="lang-buttons">
-        <button data-lang="en" class="active magnetic">EN</button>
-        <button data-lang="es" class="magnetic">ES</button>
-        <button data-lang="fr" class="magnetic">FR</button>
-        <button data-lang="it" class="magnetic">IT</button>
-        <button data-lang="pt" class="magnetic">PT</button>
-        <button data-lang="de" class="magnetic">DE</button>
-      </div>
-      <div class="lang-output">
-        <span class="lang-msg" id="langMsg" data-en="Your points" data-es="Tus puntos" data-fr="Vos points" data-it="I tuoi punti" data-pt="Os seus pontos" data-de="Deine Punkte">Your points</span>
-      </div>
-    </div>
-
-    <div class="code-block fade-in d2">
-      <pre><code id="codeBlock"><span class="code-line active" data-lang="en">IF @user_language == "en" THEN
-  SET @message = "Your points"</span>
-<span class="code-line" data-lang="es">ELSEIF @user_language == "es" THEN
-  SET @message = "Tus puntos"</span>
-<span class="code-line" data-lang="fr">ELSEIF @user_language == "fr" THEN
-  SET @message = "Vos points"</span>
-<span class="code-line" data-lang="it">ELSEIF @user_language == "it" THEN
-  SET @message = "I tuoi punti"</span>
-<span class="code-line" data-lang="pt">ELSEIF @user_language == "pt" THEN
-  SET @message = "Os seus pontos"</span>
-<span class="code-line" data-lang="de">ELSEIF @user_language == "de" THEN
-  SET @message = "Deine Punkte"</span>
-ENDIF</code></pre>
-    </div>
-    <p class="code-caption fade-in d3">Personalisation logic that adapted every email across six languages, purchase history and loyalty points balance, deployed across 500K subscribers via Salesforce Marketing Cloud.</p>
-
-    <span class="label" style="margin-top:56px;display:block;">This exact branch, live in an inbox</span>
-    <p class="section-sub" style="margin-top:8px;">Below is the Spanish branch of that same script, the one that assembled the loyalty card a real subscriber received.</p>
-    <div class="code-result-grid fade-in d2">
+    <div class="code-result-grid fade-in d1">
       <div class="code-block" style="margin-top:0;">
         <pre><code><span class="code-line active">ELSEIF @user_language == "es" THEN
   SET @first_line = CONCAT(@balance_wallet, " puntos")
@@ -113,6 +80,40 @@ ENDIF</span>
       </div>
       <div class="placeholder-box tilt-card code-result-image"><img src="assets/img/miscota-loyalty.webp" alt="Miscota loyalty points balance shown to a customer, the rendered result of the AMPscript alongside it" class="project-img"></div>
     </div>
+
+    <span class="label" style="margin-top:56px;display:block;">Same branching logic, five more languages</span>
+    <p class="section-sub" style="margin-top:8px;">Click a language to see the same IF/ELSEIF structure switch branch and update the message live, running across 500K inboxes in six languages.</p>
+
+    <div class="lang-demo fade-in d2">
+      <div class="lang-buttons">
+        <button data-lang="en" class="active magnetic">EN</button>
+        <button data-lang="es" class="magnetic">ES</button>
+        <button data-lang="fr" class="magnetic">FR</button>
+        <button data-lang="it" class="magnetic">IT</button>
+        <button data-lang="pt" class="magnetic">PT</button>
+        <button data-lang="de" class="magnetic">DE</button>
+      </div>
+      <div class="lang-output">
+        <span class="lang-msg" id="langMsg" data-en="Your points" data-es="Tus puntos" data-fr="Vos points" data-it="I tuoi punti" data-pt="Os seus pontos" data-de="Deine Punkte">Your points</span>
+      </div>
+    </div>
+
+    <div class="code-block fade-in d3">
+      <pre><code id="codeBlock"><span class="code-line active" data-lang="en">IF @user_language == "en" THEN
+  SET @message = "Your points"</span>
+<span class="code-line" data-lang="es">ELSEIF @user_language == "es" THEN
+  SET @message = "Tus puntos"</span>
+<span class="code-line" data-lang="fr">ELSEIF @user_language == "fr" THEN
+  SET @message = "Vos points"</span>
+<span class="code-line" data-lang="it">ELSEIF @user_language == "it" THEN
+  SET @message = "I tuoi punti"</span>
+<span class="code-line" data-lang="pt">ELSEIF @user_language == "pt" THEN
+  SET @message = "Os seus pontos"</span>
+<span class="code-line" data-lang="de">ELSEIF @user_language == "de" THEN
+  SET @message = "Deine Punkte"</span>
+ENDIF</code></pre>
+    </div>
+    <p class="code-caption fade-in d3">Personalisation logic that adapted every email across six languages, purchase history and loyalty points balance, deployed across 500K subscribers via Salesforce Marketing Cloud.</p>
 
     <span class="label" style="margin-top:56px;display:block;">More campaigns I wrote and built</span>
     <p class="section-sub" style="margin-top:8px;">Two parasite-prevention campaigns from the CRM calendar: one on treatment products like pipettes and collars, the other on grooming care.</p>
@@ -168,7 +169,7 @@ ENDIF</span>
 
 <footer class="site-footer">&copy; Raquel Muzquiz Gil 2026</footer>
 
-<script src="assets/js/main.js?v=12"></script>
+<script src="assets/js/main.js?v=13"></script>
 <script>
 (function () {
   var buttons = document.querySelectorAll('.lang-buttons button');
