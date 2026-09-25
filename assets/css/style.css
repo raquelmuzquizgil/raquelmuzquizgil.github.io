@@ -807,13 +807,9 @@ footer.site-footer{
 }
 .stat-card .stat-number{color:var(--accent);font-size:2.1rem;}
 .stat-card .stat-label{color:var(--text-secondary);margin-top:10px;font-size:0.88rem;}
-.methodology{
-  margin-top:36px;
-  font-style:italic;
-  font-size:0.85rem;
-  color:var(--text-secondary);
-  max-width:680px;
-}
+.stat-card.lead{background:var(--dark);}
+.stat-card.lead .stat-number{font-size:2.6rem;}
+.stat-card.lead .stat-label{color:rgba(245,243,240,0.72);}
 
 /* ---------- code block + language demo (miscota) ---------- */
 .code-block{
