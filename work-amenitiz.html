@@ -9,8 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=24">
-<script src="assets/js/vendor/chart.umd.js?v=24"></script>
+<link rel="stylesheet" href="assets/css/style.css?v=27">
+<script src="assets/js/vendor/chart.umd.js?v=27"></script>
 </head>
 <body>
 
@@ -166,8 +166,8 @@
 <section class="bg-light" id="adoption">
   <div class="wrap">
     <div class="adoption-head">
-      <h2 class="section-title" data-split>Do product comms move adoption?</h2>
-      <p class="adoption-sub">Yes, +10% on average, measured against a real control group and tracked in Mixpanel.</p>
+      <h2 class="section-title" data-split>Most campaign wins can't prove causation. This one can.</h2>
+      <p class="adoption-sub">Hotel IDs ending in 5 or 7 are permanently excluded from every campaign, a random sample, not a curated one. That's what makes this an experiment, not a comparison, and it's tracked in Mixpanel.</p>
     </div>
 
     <div class="chart-card fade-in d1">
@@ -177,6 +177,10 @@
     </div>
 
     <div class="stat-cards fade-in d2">
+      <div class="stat-card lead">
+        <span class="stat-number" data-count="380" data-prefix="~">0</span>
+        <span class="stat-label">hotels adopted features they otherwise would not have</span>
+      </div>
       <div class="stat-card">
         <span class="stat-number" data-count="10" data-prefix="+" data-suffix="%">0</span>
         <span class="stat-label">adoption lift (vs real control group)</span>
@@ -185,13 +189,7 @@
         <span class="stat-number" data-count="1.75" data-decimals="2" data-suffix="x">0</span>
         <span class="stat-label">extra lift on campaigns with a clear, measurable result</span>
       </div>
-      <div class="stat-card">
-        <span class="stat-number" data-count="380" data-prefix="~">0</span>
-        <span class="stat-label">hotels (adopted features they otherwise would not have)</span>
-      </div>
     </div>
-
-    <p class="methodology fade-in d3">Hotels with IDs ending in 5 or 7 are permanently excluded from all campaigns. It's a random selection, not a curated one. This makes it an experiment, not a comparison.</p>
   </div>
 </section>
 
@@ -229,7 +227,7 @@
 
 <footer class="site-footer">&copy; Raquel Muzquiz Gil 2026</footer>
 
-<script src="assets/js/main.js?v=24"></script>
+<script src="assets/js/main.js?v=27"></script>
 <script>
 (function () {
   var canvas = document.getElementById('adoptionChart');
