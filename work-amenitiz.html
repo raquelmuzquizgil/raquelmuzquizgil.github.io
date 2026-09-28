@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=34">
+<link rel="stylesheet" href="assets/css/style.css?v=35">
 <script src="assets/js/vendor/chart.umd.js?v=32"></script>
 </head>
 <body>
@@ -240,6 +240,7 @@
   var canvas = document.getElementById('adoptionChart');
   if (!canvas || typeof Chart === 'undefined') return;
   var ctx = canvas.getContext('2d');
+  var isNarrow = window.innerWidth < 640;
 
   var verticalLinePlugin = {
     id: 'verticalSendLine',
@@ -258,10 +259,12 @@
       c.lineWidth = 1;
       c.stroke();
       c.setLineDash([]);
-      c.fillStyle = '#1A1714';
-      c.font = '600 11px Inter, sans-serif';
-      c.textAlign = 'center';
-      c.fillText('Campaign sent', x, yScale.top - 10);
+      if (!isNarrow) {
+        c.fillStyle = '#1A1714';
+        c.font = '600 11px Inter, sans-serif';
+        c.textAlign = 'center';
+        c.fillText('Campaign sent', x, yScale.top - 10);
+      }
       c.restore();
     }
   };
@@ -269,6 +272,7 @@
   var inlineLabelsPlugin = {
     id: 'inlineLabels',
     afterDatasetsDraw: function (chart) {
+      if (isNarrow) return;
       chart.data.datasets.forEach(function (dataset, i) {
         var meta = chart.getDatasetMeta(i);
         var last = meta.data[meta.data.length - 1];
@@ -315,9 +319,20 @@
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      layout: { padding: { right: 150, top: 20 } },
+      layout: { padding: { right: isNarrow ? 8 : 150, top: 20 } },
       plugins: {
-        legend: { display: false },
+        legend: {
+          display: isNarrow,
+          position: 'top',
+          align: 'start',
+          labels: {
+            boxWidth: 12,
+            boxHeight: 12,
+            padding: 16,
+            font: { family: 'Inter', size: 12, weight: '600' },
+            color: '#1A1714'
+          }
+        },
         tooltip: {
           backgroundColor: '#1A1714',
           titleFont: { family: 'Inter' },
