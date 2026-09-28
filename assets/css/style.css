@@ -294,8 +294,12 @@ body.is-leaving .transition-curtain{
 .placeholder-box.single{aspect-ratio:16/9;}
 .placeholder-box.oro-image{aspect-ratio:1/1;max-width:420px;}
 .placeholder-box:has(.project-img){padding:0;border:none;}
-.project-section.text-only{grid-template-columns:1fr;}
-.project-section.text-only .fade-in{max-width:640px;}
+.project-section-pair{
+  padding:100px 0;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+}
 
 /* ---------- stats bar ---------- */
 .stats-bar{
@@ -770,13 +774,21 @@ footer.site-footer{
   font-size:1.05rem;
   margin-top:14px;
 }
+.chart-title{margin-top:40px;font-size:0.85rem;font-weight:600;color:var(--text-secondary);}
 .chart-card{
-  margin-top:56px;
+  margin-top:16px;
   background:#FFFFFF;
   border-radius:14px;
   padding:40px 32px 24px;
 }
 .chart-canvas-wrap{position:relative;height:380px;}
+.adoption-methodology{
+  margin-top:24px;
+  max-width:760px;
+  color:var(--text-secondary);
+  font-size:0.95rem;
+  line-height:1.6;
+}
 .stat-cards{
   margin-top:32px;
   display:grid;
@@ -793,6 +805,23 @@ footer.site-footer{
 .stat-card.lead{background:var(--dark);}
 .stat-card.lead .stat-number{font-size:2.6rem;}
 .stat-card.lead .stat-label{color:rgba(245,243,240,0.72);}
+.adoption-footnote{
+  margin-top:16px;
+  font-size:0.8rem;
+  color:var(--text-secondary);
+  opacity:0.75;
+}
+.finding-block{
+  margin-top:40px;
+  background:#FFFFFF;
+  border-radius:14px;
+  padding:32px 28px;
+  border-left:3px solid var(--accent);
+}
+.finding-block .label{display:block;margin-bottom:14px;}
+.finding-block p{color:var(--text-secondary);font-size:0.95rem;line-height:1.65;}
+.finding-block p + p{margin-top:12px;}
+.finding-block strong{color:var(--dark);}
 
 /* ---------- code block + language demo (miscota) ---------- */
 .code-block{
@@ -914,6 +943,7 @@ footer.site-footer{
   align-items:start;
 }
 .lifestyle-grid .email-preview-wrap{max-width:none;}
+.lifestyle-grid .lang-proof-item{max-width:none;}
 .lifestyle-hint{margin-top:10px;font-size:0.82rem;color:var(--text-secondary);}
 
 /* ---------- other work ---------- */
@@ -927,7 +957,6 @@ footer.site-footer{
 }
 .project-section:nth-child(even){direction:rtl;}
 .project-section:nth-child(even) > *{direction:ltr;}
-.project-section.text-only{direction:ltr;}
 .project-title{
   font-size:clamp(2rem,4vw,3.2rem);
   font-weight:800;
@@ -975,6 +1004,7 @@ footer.site-footer{
   .email-preview-window{height:380px;}
   .project-section{grid-template-columns:1fr;}
   .project-section:nth-child(even){direction:ltr;}
+  .project-section-pair{grid-template-columns:1fr;gap:56px;padding:64px 0;}
   .wrap{padding:0 22px;}
   .nav-link-inner span{font-size:2.2rem;}
 }

@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=32">
+<link rel="stylesheet" href="assets/css/style.css?v=33">
 <script src="assets/js/vendor/chart.umd.js?v=32"></script>
 </head>
 <body>
@@ -166,29 +166,38 @@
 <section class="bg-light" id="adoption">
   <div class="wrap">
     <div class="adoption-head">
-      <h2 class="section-title" data-split>Most campaign wins can't prove causation. This one can.</h2>
-      <p class="adoption-sub">Hotel IDs ending in 5 or 7 are permanently excluded from every campaign, a random sample, not a curated one. That's what makes this an experiment, not a comparison, and it's tracked in Mixpanel.</p>
+      <h2 class="section-title" data-split>A control group had been running for a year. Nobody was measuring against it.</h2>
+      <p class="adoption-sub">Every hotel's account number is issued in sequence, so the last digit is arbitrary, effectively a coin flip. Excluding the ones ending in 5 or 7 from every campaign created a random control group that had sat unused for a year across sixty-odd sends, until I started measuring against it, tracked in Mixpanel.</p>
     </div>
 
+    <p class="chart-title fade-in d1">Out of every 1,000 hotels, how many started using the feature that week</p>
     <div class="chart-card fade-in d1">
       <div class="chart-canvas-wrap">
         <canvas id="adoptionChart"></canvas>
       </div>
     </div>
+    <p class="adoption-methodology fade-in d2">Two of the six campaigns measured are conclusive on their own. Pooled together, all six are: a single send over a fortnight can't detect a ten percent shift, so the programme is the honest unit of measurement, not any individual send.</p>
 
     <div class="stat-cards fade-in d2">
       <div class="stat-card lead">
         <span class="stat-number" data-count="380" data-prefix="~">0</span>
-        <span class="stat-label">hotels adopted features they otherwise would not have</span>
+        <span class="stat-label">hotels started using a feature they otherwise wouldn't have</span>
       </div>
       <div class="stat-card">
         <span class="stat-number" data-count="10" data-prefix="+" data-suffix="%">0</span>
-        <span class="stat-label">adoption lift (vs real control group)</span>
+        <span class="stat-label">adoption lift across six campaigns, against the excluded group</span>
       </div>
       <div class="stat-card">
         <span class="stat-number" data-count="1.75" data-decimals="2" data-suffix="x">0</span>
-        <span class="stat-label">extra lift on campaigns with a clear, measurable result</span>
+        <span class="stat-label">the strongest single campaign of the six</span>
       </div>
+    </div>
+    <p class="adoption-footnote fade-in d2">Measured across six campaign groups over twelve months, using a randomised control group and a before-and-after comparison.</p>
+
+    <div class="finding-block fade-in d3">
+      <span class="label">The finding I didn't go looking for</span>
+      <p>One number wouldn't move: in-app messages only ever reached about <strong>40% of the people they were sent to</strong>. It matched, almost exactly, the share of hoteliers using the product on desktop rather than mobile.</p>
+      <p>I went into the codebase. The app serves a different page template on mobile, and the code that displays in-app messages had only ever been wired into the desktop one. <strong>In-app messages had never worked on mobile</strong>, not since they were switched on roughly twenty months earlier. It's now a one-line fix on the engineering roadmap.</p>
     </div>
   </div>
 </section>
@@ -237,7 +246,7 @@
   var verticalLinePlugin = {
     id: 'verticalSendLine',
     afterDraw: function (chart) {
-      var idx = 6;
+      var idx = 9;
       var xScale = chart.scales.x;
       var yScale = chart.scales.y;
       var x = xScale.getPixelForValue(idx);
@@ -254,7 +263,7 @@
       c.fillStyle = '#1A1714';
       c.font = '600 11px Inter, sans-serif';
       c.textAlign = 'center';
-      c.fillText('Send', x, yScale.top - 10);
+      c.fillText('Campaign sent', x, yScale.top - 10);
       c.restore();
     }
   };
@@ -281,11 +290,11 @@
   new Chart(ctx, {
     type: 'line',
     data: {
-      labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6', 'Week 7', 'Week 8'],
+      labels: ['Mid Jun', 'Wk 2', 'Wk 3', 'Wk 4', 'Mid Jul', 'Wk 6', 'Wk 7', 'Wk 8', 'Wk 9', 'Mid Aug'],
       datasets: [
         {
           label: 'Received campaign',
-          data: [1.0, 1.02, 0.98, 1.01, 1.03, 0.99, 1.75, 1.15],
+          data: [2.4, 1.9, 2.6, 2.1, 2.8, 1.8, 2.3, 2.6, 1.9, 7.2],
           borderColor: '#DC0080',
           backgroundColor: '#DC0080',
           borderWidth: 2.5,
@@ -294,8 +303,8 @@
           pointHoverRadius: 4
         },
         {
-          label: 'Control group',
-          data: [1.0, 1.01, 0.99, 1.0, 1.02, 0.99, 1.03, 1.0],
+          label: 'Excluded group',
+          data: [2.9, 2.2, 1.8, 3.1, 2.4, 2.0, 2.6, 2.1, 2.5, 3.6],
           borderColor: '#5C5A57',
           backgroundColor: '#5C5A57',
           borderWidth: 2,
@@ -317,7 +326,7 @@
           bodyFont: { family: 'Inter' },
           padding: 10,
           callbacks: {
-            label: function (ctx) { return ctx.dataset.label + ': ' + ctx.parsed.y.toFixed(2) + 'x'; }
+            label: function (ctx) { return ctx.dataset.label + ': ' + ctx.parsed.y.toFixed(1) + ' / 1,000'; }
           }
         }
       },
@@ -328,12 +337,12 @@
         },
         y: {
           min: 0,
-          max: 2,
+          max: 8,
           ticks: {
-            stepSize: 0.5,
+            stepSize: 2,
             font: { family: 'Inter', size: 11 },
             color: '#5C5A57',
-            callback: function (value) { return value === 0 ? '0x' : value + 'x normal'; }
+            callback: function (value) { return value + ' / 1,000'; }
           },
           grid: { color: 'rgba(26,23,20,0.08)' }
         }
