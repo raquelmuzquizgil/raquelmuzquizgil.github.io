@@ -294,25 +294,8 @@ body.is-leaving .transition-curtain{
 .placeholder-box.single{aspect-ratio:16/9;}
 .placeholder-box.oro-image{aspect-ratio:1/1;max-width:420px;}
 .placeholder-box:has(.project-img){padding:0;border:none;}
-.placeholder-box.trend-box{
-  background:var(--dark);
-  border:none;
-  flex-direction:column;
-  gap:10px;
-}
-.placeholder-box.trend-box .trend-word{
-  font-size:clamp(1.8rem,3.4vw,2.6rem);
-  font-weight:800;
-  letter-spacing:-0.02em;
-  color:#F0EEEA;
-}
-.placeholder-box.trend-box .trend-sub{
-  font-size:0.78rem;
-  font-weight:600;
-  letter-spacing:0.08em;
-  text-transform:uppercase;
-  color:var(--accent);
-}
+.project-section.text-only{grid-template-columns:1fr;direction:ltr;}
+.project-section.text-only .fade-in{max-width:640px;}
 
 /* ---------- stats bar ---------- */
 .stats-bar{
