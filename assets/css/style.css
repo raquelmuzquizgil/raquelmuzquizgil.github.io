@@ -294,7 +294,7 @@ body.is-leaving .transition-curtain{
 .placeholder-box.single{aspect-ratio:16/9;}
 .placeholder-box.oro-image{aspect-ratio:1/1;max-width:420px;}
 .placeholder-box:has(.project-img){padding:0;border:none;}
-.project-section.text-only{grid-template-columns:1fr;direction:ltr;}
+.project-section.text-only{grid-template-columns:1fr;}
 .project-section.text-only .fade-in{max-width:640px;}
 
 /* ---------- stats bar ---------- */
@@ -571,13 +571,13 @@ footer.site-footer{
   background:var(--bg-light);
   border:1px solid var(--border);
   display:block;
-  padding:40px;
-  min-height:340px;
+  padding:36px;
+  min-height:220px;
   display:flex;
   flex-direction:column;
   justify-content:flex-end;
 }
-.work-tile.large{grid-column:span 1;min-height:420px;}
+.work-tile.large{grid-column:span 1;min-height:260px;}
 .work-tile-panel{
   position:absolute;
   inset:0;
@@ -927,6 +927,7 @@ footer.site-footer{
 }
 .project-section:nth-child(even){direction:rtl;}
 .project-section:nth-child(even) > *{direction:ltr;}
+.project-section.text-only{direction:ltr;}
 .project-title{
   font-size:clamp(2rem,4vw,3.2rem);
   font-weight:800;
