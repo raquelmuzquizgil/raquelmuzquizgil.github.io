@@ -292,7 +292,7 @@ body.is-leaving .transition-curtain{
   color:var(--text-secondary);
 }
 .placeholder-box.single{aspect-ratio:16/9;}
-.placeholder-box.oro-image{aspect-ratio:3/4;}
+.placeholder-box.oro-image{aspect-ratio:1/1;max-width:420px;}
 .placeholder-box:has(.project-img){padding:0;border:none;}
 .placeholder-box.trend-box{
   background:var(--dark);
