@@ -782,13 +782,6 @@ footer.site-footer{
   padding:40px 32px 24px;
 }
 .chart-canvas-wrap{position:relative;height:380px;}
-.adoption-methodology{
-  margin-top:24px;
-  max-width:760px;
-  color:var(--text-secondary);
-  font-size:0.95rem;
-  line-height:1.6;
-}
 .stat-cards{
   margin-top:32px;
   display:grid;
@@ -820,8 +813,6 @@ footer.site-footer{
 }
 .finding-block .label{display:block;margin-bottom:14px;}
 .finding-block p{color:var(--text-secondary);font-size:0.95rem;line-height:1.65;}
-.finding-block p + p{margin-top:12px;}
-.finding-block strong{color:var(--dark);}
 
 /* ---------- code block + language demo (miscota) ---------- */
 .code-block{

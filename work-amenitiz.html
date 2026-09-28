@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=33">
+<link rel="stylesheet" href="assets/css/style.css?v=34">
 <script src="assets/js/vendor/chart.umd.js?v=32"></script>
 </head>
 <body>
@@ -166,8 +166,8 @@
 <section class="bg-light" id="adoption">
   <div class="wrap">
     <div class="adoption-head">
-      <h2 class="section-title" data-split>A control group had been running for a year. Nobody was measuring against it.</h2>
-      <p class="adoption-sub">Every hotel's account number is issued in sequence, so the last digit is arbitrary, effectively a coin flip. Excluding the ones ending in 5 or 7 from every campaign created a random control group that had sat unused for a year across sixty-odd sends, until I started measuring against it, tracked in Mixpanel.</p>
+      <h2 class="section-title" data-split>The control group I didn't have to build</h2>
+      <p class="adoption-sub">Hotel account numbers ending in 5 or 7 are excluded from every campaign, a random control group that had sat unused for a year across 60+ sends. I started measuring against it, tracked in Mixpanel.</p>
     </div>
 
     <p class="chart-title fade-in d1">Out of every 1,000 hotels, how many started using the feature that week</p>
@@ -176,28 +176,26 @@
         <canvas id="adoptionChart"></canvas>
       </div>
     </div>
-    <p class="adoption-methodology fade-in d2">Two of the six campaigns measured are conclusive on their own. Pooled together, all six are: a single send over a fortnight can't detect a ten percent shift, so the programme is the honest unit of measurement, not any individual send.</p>
 
     <div class="stat-cards fade-in d2">
       <div class="stat-card lead">
         <span class="stat-number" data-count="380" data-prefix="~">0</span>
-        <span class="stat-label">hotels started using a feature they otherwise wouldn't have</span>
+        <span class="stat-label">hotels adopted a feature they otherwise wouldn't have</span>
       </div>
       <div class="stat-card">
         <span class="stat-number" data-count="10" data-prefix="+" data-suffix="%">0</span>
-        <span class="stat-label">adoption lift across six campaigns, against the excluded group</span>
+        <span class="stat-label">adoption lift, six campaigns pooled</span>
       </div>
       <div class="stat-card">
         <span class="stat-number" data-count="1.75" data-decimals="2" data-suffix="x">0</span>
-        <span class="stat-label">the strongest single campaign of the six</span>
+        <span class="stat-label">lift on the strongest single campaign</span>
       </div>
     </div>
-    <p class="adoption-footnote fade-in d2">Measured across six campaign groups over twelve months, using a randomised control group and a before-and-after comparison.</p>
+    <p class="adoption-footnote fade-in d2">Measured over twelve months. Two of six campaigns are conclusive alone; pooled, all six are.</p>
 
     <div class="finding-block fade-in d3">
-      <span class="label">The finding I didn't go looking for</span>
-      <p>One number wouldn't move: in-app messages only ever reached about <strong>40% of the people they were sent to</strong>. It matched, almost exactly, the share of hoteliers using the product on desktop rather than mobile.</p>
-      <p>I went into the codebase. The app serves a different page template on mobile, and the code that displays in-app messages had only ever been wired into the desktop one. <strong>In-app messages had never worked on mobile</strong>, not since they were switched on roughly twenty months earlier. It's now a one-line fix on the engineering roadmap.</p>
+      <span class="label">Along the way</span>
+      <p>In-app messages had a hard delivery ceiling of ~40%, matching the desktop share exactly. The mobile template was missing the code to display them, a gap open for twenty months, now a one-line fix on the roadmap.</p>
     </div>
   </div>
 </section>
