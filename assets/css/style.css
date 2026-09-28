@@ -805,11 +805,10 @@ footer.site-footer{
   opacity:0.75;
 }
 .finding-block{
-  margin-top:40px;
-  background:#FFFFFF;
-  border-radius:14px;
-  padding:32px 28px;
-  border-left:3px solid var(--accent);
+  margin-top:48px;
+  max-width:640px;
+  padding-left:20px;
+  border-left:2px solid var(--border);
 }
 .finding-block .label{display:block;margin-bottom:14px;}
 .finding-block p{color:var(--text-secondary);font-size:0.95rem;line-height:1.65;}
