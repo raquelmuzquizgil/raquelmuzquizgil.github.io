@@ -256,23 +256,6 @@ body.is-leaving .transition-curtain{
   will-change:transform;
 }
 
-/* ---------- rotating badge ---------- */
-.badge-spin{
-  width:128px;height:128px;
-  position:relative;
-  animation:spin 14s linear infinite;
-}
-@keyframes spin{to{transform:rotate(360deg);}}
-.badge-spin svg{width:100%;height:100%;}
-.badge-spin-dot{
-  position:absolute;
-  top:50%;left:50%;
-  width:10px;height:10px;
-  border-radius:50%;
-  background:var(--accent);
-  transform:translate(-50%,-50%);
-}
-
 /* ---------- placeholders ---------- */
 .placeholder-box{
   aspect-ratio:4/3;
@@ -495,12 +478,6 @@ footer.site-footer{
   border-radius:20px;
   border:1px solid var(--border);
 }
-.hero-badge{
-  position:absolute;
-  top:-46px;right:-10px;
-  z-index:3;
-}
-.hero-badge a{display:block;position:relative;width:128px;height:128px;}
 .hero-contact{
   margin-top:80px;
   display:flex;
@@ -972,7 +949,6 @@ footer.site-footer{
   .hero{padding:120px 0 40px;}
   .hero-inner{grid-template-columns:1fr;gap:36px;}
   .hero-photo-wrap{justify-self:center;max-width:280px;order:-1;}
-  .hero-badge{top:auto;bottom:-20px;right:10px;}
   .capabilities{grid-template-columns:1fr;gap:40px;}
   .capabilities.two-col{grid-template-columns:1fr;}
   .work-grid{grid-template-columns:1fr;}
@@ -1000,7 +976,6 @@ footer.site-footer{
 }
 @media (max-width:560px){
   .stats-bar{grid-template-columns:1fr 1fr;padding:32px 24px;gap:24px;}
-  .badge-spin{width:96px;height:96px;}
   .placeholder-row{grid-template-columns:1fr;}
   .catalog-grid{grid-template-columns:1fr;}
   .chart-card{padding:28px 16px 16px;}
@@ -1013,5 +988,4 @@ footer.site-footer{
 @media (prefers-reduced-motion:reduce){
   *{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;}
   html{scroll-behavior:auto;}
-  .badge-spin{animation:none;}
 }
